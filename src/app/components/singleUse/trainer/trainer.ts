@@ -8,7 +8,7 @@ import { UnselectableCaseShower } from "../../multiUse/unselectable-case-shower/
 
 @Component({
   selector: 'app-trainer',
-  imports: [DecimalPipe, CaseShower, UnselectableCaseShower],
+  imports: [DecimalPipe, CaseShower],
   templateUrl: './trainer.html',
   styleUrl: './trainer.scss',
 })
