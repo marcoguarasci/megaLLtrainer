@@ -1,0 +1,15 @@
+<p class="scramble">{{currentCase().scrambles[0]}}</p>
+<p class="timer-container">
+    <span class="timer" id="focus-here" #focusHere (keydown)="timerPressed($event)" (keyup)="timerReleased($event)"
+    tabindex="1">
+    {{currentTime() | number: '1.2-2'}}
+</span>
+</p>
+
+<p class="case-name">Name: {{currentCase().name}}</p>
+
+<app-case-shower [ccase]="currentCase()"/>
+
+<p class="case-solution">Solution: {{currentCase().solutions[0]}}</p>
+
+<button (click)="nextCase()">next case</button>

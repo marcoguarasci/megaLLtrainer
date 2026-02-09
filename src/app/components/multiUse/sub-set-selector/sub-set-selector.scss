@@ -1,0 +1,33 @@
+.subset-container{
+
+    border: solid;
+    border-width: 5px;
+    border-color: red;
+
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.subset-header {
+    text-align: center;
+    width: 100%;
+}
+
+.subset-name {
+    font-size: xx-large;
+    cursor: pointer;
+}
+
+.toggle-sets {
+    float: right;
+}
+
+.sets-container {
+
+    // border: solid;
+    // border-width: 5px;
+    // border-color: red;
+
+    display: flex;
+    flex-wrap: wrap;
+}

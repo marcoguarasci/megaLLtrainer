@@ -1,0 +1,13 @@
+<span class="set-container">
+    <p class="set-name" (click)="toggleSet()">
+        {{setLL().setName}}
+    </p>
+
+    <span class="cases-container">
+        @for(ccase of setLL().cases; track ccase.name){
+        <app-case-shower [ccase]="ccase" (caseToggled)="caseToggled($event)"/>
+        }
+    </span>
+
+    
+</span>

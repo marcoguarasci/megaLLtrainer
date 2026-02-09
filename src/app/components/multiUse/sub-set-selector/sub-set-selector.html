@@ -1,0 +1,17 @@
+<span class="subsets">
+    @for (subsetLL of OLLsPLLs(); track $index) {
+    <span class="subset-container">
+        <p class="subset-header">
+            <span class="subset-name" (click)="toggleSubset(subsetLL)">
+                {{subsetLL.subsetName}}
+            </span>
+            <span class="toggle-sets">aa</span>
+        </p>
+        <p class="sets-container">
+            @for(setLL of subsetLL.sets; track setLL.setName){
+            <app-small-set-selector [setLL]="setLL" (setToggled)="toggledSet($event, subsetLL)" />
+            }
+        </p>
+    </span>
+    }
+</span>

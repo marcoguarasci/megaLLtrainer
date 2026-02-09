@@ -1,0 +1,28 @@
+.container {
+    width: inherit;
+    display: flex;
+    justify-content: space-around;
+
+    padding: 0px 10px;
+}
+
+.tab {
+    border: 2px solid black;
+    margin: 4px;
+    border-radius: 10px 10px 0px 0px;
+    padding: 10px;
+
+    width: 30vw;
+    text-align: center;
+
+    cursor: pointer;
+    transition: all .06s;
+}
+
+.selected{
+    border: 5px solid black;
+    margin: 1px;
+    width: 60vw;
+
+    font-weight: bold;
+}

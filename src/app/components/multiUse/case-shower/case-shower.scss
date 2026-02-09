@@ -1,0 +1,43 @@
+$img-width-height: 100px;
+
+.pointer {
+    cursor: pointer;
+}
+
+.superbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: calc($img-width-height * 1.1);
+    height: calc($img-width-height * 1.35);
+    margin: 3px;
+}
+
+.box {
+    justify-content: center;
+
+    border-radius: 10%;
+    border: 1px solid black;
+
+    padding: 5px;
+}
+
+.selected {
+    background-color: yellow;
+    border-width: 2px;
+}
+
+img {
+    width: $img-width-height;
+    height: $img-width-height;
+    // box-sizing: border-box;
+    border-radius: inherit;
+}
+
+.name {
+    text-align: center;
+    display: block;
+    font-weight: bold;
+    font-size: large;
+}
