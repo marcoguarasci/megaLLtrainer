@@ -5,6 +5,7 @@ import { CaseShower } from '../../multiUse/case-shower/case-shower';
 import { DecimalPipe } from '@angular/common';
 import { interval, Observable } from 'rxjs';
 import { UnselectableCaseShower } from "../../multiUse/unselectable-case-shower/unselectable-case-shower";
+import { DataReader } from '../../../service/data-reader';
 
 @Component({
   selector: 'app-trainer',
@@ -14,24 +15,23 @@ import { UnselectableCaseShower } from "../../multiUse/unselectable-case-shower/
 })
 export class Trainer implements OnInit, AfterViewInit {
 
-  readonly timerIncrease: number = 10;
-
   @ViewChild('focusHere') timerEl!: ElementRef;
-
+  
   cases = input.required<Array<CaseLL>>();
-
+  
   ngOnInit(): void {
     this.nextCase();
     this.setFocus();
   }
-
+  
   ngAfterViewInit(): void {
     this.setFocus();
   }
-
+  
   currentCase = signal<CaseLL>({ name: "", solutions: [""], scrambles: [""], isSelected: true });
   currentTime = signal<number>(0);
-
+  
+  readonly timerIncrease: number = 10;
   private isTimerGoing: boolean = false;
   private isTimerStarting: boolean = false;
   private interval: any = null;
@@ -39,6 +39,10 @@ export class Trainer implements OnInit, AfterViewInit {
   protected nextCase() {
     this.currentCase.set(this.cases()[Math.floor(Math.random() * this.cases().length)]);
     this.setFocus();
+  }
+
+  getImgPath(ccase: CaseLL): string {
+    return DataReader.getImgPath(ccase);
   }
 
   private setFocus() {

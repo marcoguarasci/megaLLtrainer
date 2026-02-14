@@ -7,25 +7,18 @@ import { DataReader } from '../../../service/data-reader';
   templateUrl: './case-shower.html',
   styleUrl: './case-shower.scss',
 })
-export class CaseShower implements OnInit , OnChanges{
+export class CaseShower {
 
   @Output("caseToggled") caseToggled = new EventEmitter<CaseLL>();
 
-ngOnChanges(changes: SimpleChanges): void {
-  
-  this.imgPath.set(DataReader.getImgPath(this.ccase()));
-}
-
-  ngOnInit(): void {
-    this.imgPath.set(DataReader.getImgPath(this.ccase()));
-  }
-
   ccase = input.required<CaseLL>();
-  
-  imgPath = signal<string>("");
 
   toggleCase(): void {
     this.ccase().isSelected = !this.ccase().isSelected;
     this.caseToggled.emit(this.ccase());
+  }
+
+  imgPath(): string {
+    return DataReader.getImgPath(this.ccase());
   }
 }
