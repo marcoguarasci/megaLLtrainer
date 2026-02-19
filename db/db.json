@@ -280,140 +280,140 @@
         },
         {
             "type": "PLL",
-            "name": "F1+",
             "setName": "F",
+            "name": "F1+",
             "scrambles": [
                 "F' U' F R U' R' U F' U2' F R U' R' F' U' F R U2 R' F' U2 F R U2' R'"
             ],
             "solutions": [
-                "(R2 U2 R2') U (R2 U2 R2')"
+                "R2 U2 R2' U R2 U2 R2'"
             ]
         },
         {
             "type": "PLL",
-            "name": "F1-",
             "setName": "F",
+            "name": "F1-",
             "scrambles": [
                 "R U R' F' U2 F R U' R' U R U2 R' U2' F' U2' F U R U R'"
             ],
             "solutions": [
-                "(R2 U2' R2') U' (R2 U2' R2')"
+                "R2 U2' R2' U' R2 U2' R2'"
             ]
         },
         {
             "type": "PLL",
-            "name": "F2+",
             "setName": "F",
+            "name": "F2+",
             "scrambles": [
                 "R U R' F' U' F U R U R' U2 R U R' F' U2 F R U2' R'"
             ],
             "solutions": [
-                "(R U R' U2) R' U2' (R2 U' R' U) R' U2 R"
+                "R U R' U2 R' U2' R2 U' R' U R' U2 R"
             ]
         },
         {
             "type": "PLL",
-            "name": "F2-",
             "setName": "F",
+            "name": "F2-",
             "scrambles": [
                 "R U2 R' F' U F U2' R U' R' U2' F' U' F R U2' R' F' U F"
             ],
             "solutions": [
-                "(R' U' R U2') R U2 (R2' U R U') R U2' R'"
+                "R' U' R U2' R U2 R2' U R U' R U2' R'"
             ]
         },
         {
             "type": "PLL",
-            "name": "F3+",
             "setName": "F",
+            "name": "F3+",
             "scrambles": [
                 "R U R' F' U2' F R U' R' U2' F' U' F U2' R U R' F' U2 F"
             ],
             "solutions": [
-                "R' U2' (R U' R U) (R2' U2 R U2') R U' R'"
+                "R' U2' R U' R U R2' U2 R U2' R U' R'"
             ]
         },
         {
             "type": "PLL",
-            "name": "F3-",
             "setName": "F",
+            "name": "F3-",
             "scrambles": [
                 "F' U' F R U2 R' F' U F U2 R U R' U2 F' U' F R U2' R'"
             ],
             "solutions": [
-                "R U2 (R' U R' U') (R2 U2' R' U2) R' U R"
+                "R U2 R' U R' U' R2 U2' R' U2 R' U R"
             ]
         },
         {
             "type": "PLL",
-            "name": "F4+",
             "setName": "F",
+            "name": "F4+",
             "scrambles": [
                 "R U2' R' U2' F' U' F U' F' U F R U2' R' U2' R U2 R' F' U2' F"
             ],
             "solutions": [
-                "(R U R' U) (R2 U2' R2' U2') R U2 (R U2 R' U2') R'"
+                "R U R' U R2 U2' R2' U2' R U2 R U2 R' U2' R'"
             ]
         },
         {
             "type": "PLL",
-            "name": "F4-",
             "setName": "F",
+            "name": "F4-",
             "scrambles": [
                 "F' U2 F U2 R U R' U R U' R' F' U2 F U2 F' U2' F R U2 R'"
             ],
             "solutions": [
-                "(R' U' R U') (R2' U2 R2 U2) (R' U2' R' U2') R U2 R  "
+                "R' U' R U' R2' U2 R2 U2 R' U2' R' U2' R U2 R  "
             ]
         },
         {
             "type": "PLL",
-            "name": "F5+",
             "setName": "F",
+            "name": "F5+",
             "scrambles": [
                 "R U2 R' F' U2 F U2 R U2 R' F' U F U' R U2' R' F' U2 F R U' R'"
             ],
             "solutions": [
-                "(R U2 R U2') (R' U2' R' U2) (R2 U2 R2' U') R U' R'"
+                "R U2 R U2' R' U2' R' U2 R2 U2 R2' U' R U' R'"
             ]
         },
         {
             "type": "PLL",
-            "name": "F5-",
             "setName": "F",
+            "name": "F5-",
             "scrambles": [
                 "R U R' U R U' R' F' U2 F U2 F' U2' F R U2 R' U F' U2' F"
             ],
             "solutions": [
-                "(R' U2' R' U2) (R U2 R U2') (R2' U2' R2 U) R' U R"
+                "R' U2' R' U2 R U2 R U2' R2' U2' R2 U R' U R"
             ]
         },
         {
             "type": "PLL",
-            "name": "G1+",
             "setName": "G",
+            "name": "G1+",
             "scrambles": [
                 "F' U2' F U2 F' U2 F U R U2' R' U F' U2 F R U2 R'"
             ],
             "solutions": [
-                "R' U2 (R2 U2' R' U2) R' U (R U2 R' U) (R2 U2 R2' U2') R"
+                "R' U2 R2 U2' R' U2 R' U R U2 R' U R2 U2 R2' U2' R"
             ]
         },
         {
             "type": "PLL",
-            "name": "G1-",
             "setName": "G",
+            "name": "G1-",
             "scrambles": [
                 "R U2 R' U2' R U2' R' U' F' U2 F U' R U2' R' F' U2' F"
             ],
             "solutions": [
-                "R U2' (R2' U2 R U2') R U' (R' U2' R U') (R2' U2' R2 U2) R'"
+                "R U2' R2' U2 R U2' R U' R' U2' R U' R2' U2' R2 U2 R'"
             ]
         },
         {
             "type": "PLL",
-            "name": "G2+",
             "setName": "G",
+            "name": "G2+",
             "scrambles": [
                 "F' U2' F U2' R U2' R' F' U2 F U2' F' U2' F R U2 R' U2' R U' R'"
             ],
@@ -423,57 +423,57 @@
         },
         {
             "type": "PLL",
-            "name": "G2-",
             "setName": "G",
+            "name": "G2-",
             "scrambles": [
                 "F' U' F U2' F' U2 F R U2' R' U2' R U2 R' F' U2' F U2' R U2' R'"
             ],
             "solutions": [
-                "F U2' (R' U' R F') (R' U' R F) U' (R' U2' R U2) F'"
+                "F U2' R' U' R F' R' U' R F U' R' U2' R U2 F'"
             ]
         },
         {
             "type": "PLL",
-            "name": "H1+",
             "setName": "H",
+            "name": "H1+",
             "scrambles": [
                 "F' U F U F' U2' F R U2 R' U R U R' U2' R U2' R'"
             ],
             "solutions": [
-                "F (R U2 R' U' R U' R') F' R' y' (R' U' R U' R' U2) R BR"
+                "F R U2 R' U' R U' R' F' R' y' R' U' R U' R' U2 R BR"
             ]
         },
         {
             "type": "PLL",
-            "name": "H1-",
             "setName": "H",
+            "name": "H1-",
             "scrambles": [
                 "R U2 R' U2 R U' R' U' R U2' R' F' U2 F U' F' U' F"
             ],
             "solutions": [
-                "F' (R U R' U') (R' F R) U' R U2' (R' U R U) (R' U2' R U2') R'"
+                "F' R U R' U' R' F R U' R U2' R' U R U R' U2' R U2' R'"
             ]
         },
         {
             "type": "PLL",
-            "name": "H2+",
             "setName": "H",
+            "name": "H2+",
             "scrambles": [
                 "R U2' R' F' U2 F U2 R U2 R' F' U F R U2 R' F' U2 F R U2' R'"
             ],
             "solutions": [
-                "(R2 U2 R2' U') R2 U' R2' y' (R2' U' R2 U') R2' U2 R2"
+                "R2 U2 R2' U' R2 U' R2' y' R2' U' R2 U' R2' U2 R2"
             ]
         },
         {
             "type": "PLL",
-            "name": "H2-",
             "setName": "H",
+            "name": "H2-",
             "scrambles": [
                 "R U2 R' F' U2' F R U2' R' F' U' F R U2' R' U2' F' U2' F R U2 R'"
             ],
             "solutions": [
-                "(R2' U2' R2 U) R2' U R2 y (R2 U R2' U) R2 U2' R2'"
+                "R2' U2' R2 U R2' U R2 y R2 U R2' U R2 U2' R2'"
             ]
         },
         {
