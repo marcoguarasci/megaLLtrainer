@@ -1,15 +1,90 @@
-<p class="scramble">{{currentCase().scrambles[0]}}</p>
-<p class="timer-container">
-    <span class="timer" id="focus-here" #focusHere (keydown)="timerPressed($event)" (keyup)="timerReleased($event)"
-        tabindex="1">
-        {{currentTime() | number: '1.2-2'}}
+<p id="container-working-space">
+    <span id="timer-and-scramble" class="big-container">
+        <button (click)="nextCase()">next case</button>
+        <br/>
+        @if(lastCase().name.length>0){
+            <button (click)="removeLastCase()">Remove last case</button>
+        }
+
+        <p class="scramble">
+            {{currentCase().scrambles[0]}}
+        </p>
+
+        <p class="timer-container">
+            <span class="timer" id="focus-here" #focusHere (keydown)="timerPressed($event)"
+                (keyup)="timerReleased($event)" [class.timer-starting]="isTimerStarting()" tabindex="1">
+                {{currentTime() | number: '1.2-2'}}
+            </span>
+        </p>
+        
+    </span>
+
+    <span id="current-and-last-case" class="big-container">
+        <span id="container-current-case" class="big-container">
+            <p class="case-name">
+                Current case: {{currentCase().name}}
+            </p>
+
+            <img [src]="getImgPath(currentCase())" alt="no img available" id="current-case-img" />
+
+            <p class="case-solution">
+                Solution: {{currentCase().solutions[0]}}
+            </p>
+
+        </span>
+
+        @if (lastCase().name.length > 0) {
+        <span id="container-last-case" class="big-container">
+            <p class="case-name">
+                Last case: {{lastCase().name}}
+            </p>
+
+            <p id="last-case-scramble">
+                Scramble: {{lastCase().scrambles[0]}}
+            </p>
+
+            <img [src]="getImgPath(lastCase())" alt="no img available" id="last-case-img" />
+
+            <p class="case-solution">
+                Solution: {{lastCase().solutions[0]}}
+            </p>
+
+        </span>
+        }
     </span>
 </p>
 
-<p class="case-name">Name: {{currentCase().name}}</p>
+<span id="container-other-info" class="big-container">
+    <p>
+        {{cases().length}} remaining cases
+    </p>
+    @switch(showRemainingCases()){
 
-<img [src]="getImgPath(currentCase())" alt="no img available" class="current-case-img">
+    @case(onlyNames){
+    @for (ccase of cases(); track ccase.name) {
+    <span>{{ccase.name}}, </span>
+    }
+    }
+    @case(onlyImgs){
+    @for(ccase of cases(); track ccase.name){
+    <img [src]="getImgPath(ccase)" alt="no img available" class="remaining-case-img" />
+    }
+    }
+    @case(bothImgsNames){
+    @for(ccase of cases();track ccase.name){
+    {{ccase.name}}
+    <img [src]="getImgPath(ccase)" alt="no img available" class="remaining-case-img" />
+    }
+    }
+    }
 
-<p class="case-solution">Solution: {{currentCase().solutions[0]}}</p>
-
-<button (click)="nextCase()">next case</button>
+    <p>
+        <label for="showRemainingCases">Show remaining cases: </label>
+        <select name="showRemainingCases" id="show-remaining-cases" (change)="onSelectShowRemainingCases($event)">
+            <option [value]="onlyNames">Names</option>
+            <option [value]="onlyImgs">Images</option>
+            <option [value]="bothImgsNames">Both</option>
+            <option [value]="noneImgsNames">None</option>
+        </select>
+    </p>
+</span>

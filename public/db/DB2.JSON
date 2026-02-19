@@ -2626,5 +2626,25 @@
             ]
         }
     ],
-    "PLLs": []
+    "PLLs": [
+        {
+            "subsetName": "CPLL",
+            "sets": [
+                {
+                    "setName": "A",
+                    "cases": [
+                        {
+                            "name": "",
+                            "scrambles": [
+                                ""
+                            ],
+                            "solutions": [
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
 }

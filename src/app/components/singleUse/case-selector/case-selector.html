@@ -1,23 +1,23 @@
 <span class="generic">
-    
-    <button (click)="onClick()">Train</button>
+
+    <button (click)="onTrainClick()">Train</button>
 
     @if (isTraining()) {
-        <app-trainer [cases]="trainingCases()"/>
+    <app-trainer [cases]="trainingCases()" (removeCase)=removeCase($event) (trainingEnded)="endTraining()" />
     }
     @else{
-        <span class="container">
-            
-            <span class="tab" [class.selected]="isOLLSelected()" (click)="OLLClicked()">OLL</span>
-            <span class="tab" [class.selected]="!isOLLSelected()" (click)="PLLClicked()">PLL</span>
-            
-        </span>
-        
-        @if(isOLLSelected()){
-            <app-sub-set-selector [OLLsPLLs]="OLLs()" />
-        }@else{
-            <app-sub-set-selector [OLLsPLLs]="PLLs()" />
-        }
+    <span class="container">
+
+        <span class="tab" [class.selected]="isOLLSelected()" (click)="OLLClicked()">OLL</span>
+        <span class="tab" [class.selected]="!isOLLSelected()" (click)="PLLClicked()">PLL</span>
+
+    </span>
+
+    @if(isOLLSelected()){
+    <app-sub-set-selector [OLLsPLLs]="OLLs()" #OLLsComponent/>
+    }@else{
+    <app-sub-set-selector [OLLsPLLs]="PLLs()" #PLLsComponent/>
     }
-    
+    }
+
 </span>

@@ -13,7 +13,7 @@ export class DataReader {
     this.getJSON().subscribe();
   }
 
-  public getJSON(): Observable<any> { return this.http.get("/db/DB2.JSON"); }
+  public getJSON(): Observable<any> { return this.http.get("./db/DB2.JSON"); }
 
   static getImgPath(ccase: CaseLL | undefined): string {
 
@@ -21,6 +21,6 @@ export class DataReader {
       // return "/imgs/default.png";
       return "";
 
-    return "/imgs/" + ccase.name + ".png";
+    return "./imgs/" + ccase.name + ".png";
   }
 }

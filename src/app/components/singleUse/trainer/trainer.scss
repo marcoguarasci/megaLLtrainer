@@ -1,4 +1,22 @@
-.scramble{
+#container-working-space {
+    display: flex;
+}
+
+.big-container{
+    padding: 5px;
+    border: solid black 2px;
+    display: block;
+}
+
+#timer-and-scramble {
+    flex: 5;
+}
+
+#current-and-last-case {
+    flex: 4;
+}
+
+.scramble {
     font-size: x-large;
 }
 
@@ -6,19 +24,37 @@
     font-size: 100px;
 }
 
+.timer-starting {
+    color: green;
+}
+
 #focus-here {
     background-color: aliceblue;
 }
 
-#focus-here:focus {
-    color: green;
+.case-name{
+    font-size: x-large;
 }
 
-.current-case-img{
-    width: 200px;
+#current-case-img {
+    width: 180px;
 }
 
+#last-case-img {
+    width: 150px;
+}
 
-.case-solution{
+.case-solution {
     font-size: larger;
+}
+
+#container-last-case {
+}
+
+#container-other-info{
+    display: block;
+}
+
+.remaining-case-img {
+    width: 50px;
 }

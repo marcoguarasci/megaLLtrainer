@@ -5,7 +5,7 @@
 
     <span class="cases-container">
         @for(ccase of setLL().cases; track ccase.name){
-        <app-case-shower [ccase]="ccase" (caseToggled)="caseToggled($event)"/>
+        <app-case-shower [ccase]="ccase" (caseToggled)="caseToggled($event)" #caseComponent/>
         }
     </span>
 

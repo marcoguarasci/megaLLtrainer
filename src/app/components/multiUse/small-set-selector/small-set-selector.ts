@@ -1,4 +1,4 @@
-import { Component, EventEmitter, input, OnInit, output, Output, signal } from '@angular/core';
+import { Component, EventEmitter, input, OnInit, output, Output, QueryList, signal, ViewChildren } from '@angular/core';
 import { CaseLL } from '../../../../../public/utilites/CaseLL.type';
 import { CaseShower } from "../case-shower/case-shower";
 import { CaseSelector } from '../../singleUse/case-selector/case-selector';
@@ -18,7 +18,8 @@ export class SmallSetSelector {
 
   setLL = input.required<SetLL>();
 
-  caseToggled(toggledCase: CaseLL): void {
+
+  protected caseToggled(toggledCase: CaseLL): void {
     if (toggledCase.isSelected) {
       if (!this.setLL().isSetSelected && !this.setLL().cases.some((ccase) => { return !ccase.isSelected }))
         this.selectSet();
@@ -27,7 +28,7 @@ export class SmallSetSelector {
       this.unselectSet();
   }
 
-  toggleSet(): void {
+  protected toggleSet(): void {
     this.setLL().isSetSelected = !this.setLL().isSetSelected;
     this.setToggled.emit(this.setLL());
 

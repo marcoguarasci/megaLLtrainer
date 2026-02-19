@@ -13,9 +13,16 @@ export class CaseShower {
 
   ccase = input.required<CaseLL>();
 
+  public removeCase(removedCase: CaseLL): void {
+    if (removedCase.name == this.ccase().name) { 
+      this.ccase().isSelected = false;
+      this.caseToggled.emit(this.ccase());
+    }
+  }
+
   toggleCase(): void {
     this.ccase().isSelected = !this.ccase().isSelected;
-    this.caseToggled.emit(this.ccase());
+      this.caseToggled.emit(this.ccase());
   }
 
   imgPath(): string {

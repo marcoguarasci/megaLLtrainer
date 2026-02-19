@@ -9,7 +9,7 @@
         </p>
         <p class="sets-container">
             @for(setLL of subsetLL.sets; track setLL.setName){
-            <app-small-set-selector [setLL]="setLL" (setToggled)="toggledSet($event, subsetLL)" />
+            <app-small-set-selector [setLL]="setLL" (setToggled)="toggledSet($event, subsetLL)" #smallSetComponent />
             }
         </p>
     </span>
