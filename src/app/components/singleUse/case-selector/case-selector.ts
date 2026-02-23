@@ -1,22 +1,20 @@
-import { Component, computed, inject, OnInit, Signal, signal, ViewChild } from '@angular/core';
+import { Component, computed, OnInit, Signal, signal } from '@angular/core';
 import { SubSetSelector } from "../../multiUse/sub-set-selector/sub-set-selector";
 import { DataReader } from '../../../service/data-reader';
 import { CaseLL } from '../../../../../public/utilites/CaseLL.type';
 import { SubsetLL } from '../../../../../public/utilites/SubsetLL';
-import { SetLL } from '../../../../../public/utilites/SetLL.type';
 import { Trainer } from "../trainer/trainer";
-import { Subject } from 'rxjs';
+import { TypeSelector } from "../../multiUse/type-selector/type-selector";
 
 @Component({
   selector: 'app-case-selector',
-  imports: [SubSetSelector, Trainer],
+  imports: [SubSetSelector, Trainer, TypeSelector],
   templateUrl: './case-selector.html',
   styleUrl: './case-selector.scss',
 })
 export class CaseSelector implements OnInit {
 
   constructor(private dataReader: DataReader) { }
-
 
   ngOnInit(): void {
 
@@ -47,6 +45,11 @@ export class CaseSelector implements OnInit {
 
   isTraining = signal<boolean>(false);
   trainingCases = signal<Array<CaseLL>>([]);
+  trainBottonText: Signal<string> = computed(() => {
+    if (this.isTraining())
+      return "End training";
+    return "Train";
+  });;
 
   protected removeCase(removedCase: CaseLL): void {
 
@@ -97,9 +100,8 @@ export class CaseSelector implements OnInit {
 
   onTrainClick(): void {
     this.trainingCases.set([]);
-    let trainingGroup = this.isOLLSelected() ? this.OLLs() : this.PLLs();
 
-    for (let subsetLL of trainingGroup)
+    for (let subsetLL of this.isOLLSelected() ? this.OLLs() : this.PLLs())
       for (let setLL of subsetLL.sets)
         for (let ccase of setLL.cases)
           if (ccase.isSelected)

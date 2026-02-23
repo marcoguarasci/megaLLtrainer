@@ -21,6 +21,6 @@ export class DataReader {
       // return "/imgs/default.png";
       return "";
 
-    return "./imgs/" + ccase.name + ".png";
+    return "./imgs/cases/" + ccase.name + ".png";
   }
 }

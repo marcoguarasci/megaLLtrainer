@@ -2,8 +2,18 @@
     width: inherit;
     display: flex;
     justify-content: space-around;
+    height: 50px;
+
 
     padding: 0px 10px;
+}
+
+.end-train-button {
+    border-color: red;
+}
+
+.end-train-button:hover {
+    background-color: rgba($color: #FF0000, $alpha: 0.3);
 }
 
 .tab {
@@ -19,7 +29,7 @@
     transition: all .06s;
 }
 
-.selected{
+.selected {
     border: 5px solid black;
     margin: 1px;
     width: 60vw;

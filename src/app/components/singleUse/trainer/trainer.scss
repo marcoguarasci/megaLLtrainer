@@ -2,10 +2,14 @@
     display: flex;
 }
 
-.big-container{
+.big-container {
     padding: 5px;
     border: solid black 2px;
     display: block;
+}
+
+#timer-container {
+    display: flex;
 }
 
 #timer-and-scramble {
@@ -32,7 +36,23 @@
     background-color: aliceblue;
 }
 
-.case-name{
+#timer-splits-container {
+    display: block;
+    padding: 5px;
+    align-content: space-around;
+}
+
+.recon-exec {
+    padding: 10px;
+    font-size: x-large;
+    display: block;
+}
+
+#fast-case-time-input {
+    width: 4ch;
+}
+
+.case-name {
     font-size: x-large;
 }
 
@@ -48,10 +68,9 @@
     font-size: larger;
 }
 
-#container-last-case {
-}
+#container-last-case {}
 
-#container-other-info{
+#container-other-info {
     display: block;
 }
 

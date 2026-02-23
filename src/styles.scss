@@ -6,3 +6,23 @@
 * {
     outline: none
 }
+
+button {
+    padding: 3px 6px;
+    margin: 2px;
+    font-size: small;
+
+
+    background-color: transparent;
+    border: solid darkblue 2px;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: rgba($color: #00FFFF, $alpha: 0.2);
+}
+
+input[type=checkbox] {
+    transform: scale(1.2);
+}

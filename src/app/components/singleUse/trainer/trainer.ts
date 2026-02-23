@@ -1,23 +1,19 @@
-import { Component, signal, input, OnInit, ViewChild, ElementRef, EventEmitter, viewChild, AfterViewInit, computed, Signal, Output, OnDestroy } from '@angular/core';
+import { Component, signal, input, OnInit, ViewChild, ElementRef, EventEmitter, Output, output } from '@angular/core';
 import { CaseLL } from '../../../../../public/utilites/CaseLL.type';
-import { SubSetSelector } from "../../multiUse/sub-set-selector/sub-set-selector";
-import { CaseShower } from '../../multiUse/case-shower/case-shower';
 import { DecimalPipe } from '@angular/common';
-import { interval, Observable } from 'rxjs';
-import { UnselectableCaseShower } from "../../multiUse/unselectable-case-shower/unselectable-case-shower";
 import { DataReader } from '../../../service/data-reader';
-import { SetLL } from '../../../../../public/utilites/SetLL.type';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-trainer',
-  imports: [DecimalPipe, CaseShower],
+  imports: [DecimalPipe, FormsModule],
   templateUrl: './trainer.html',
   styleUrl: './trainer.scss',
 })
 export class Trainer implements OnInit {
 
-  @Output("removeCase") removeCase = new EventEmitter<CaseLL>();
-  @Output("trainingEnded") trainingEnded = new EventEmitter<void>();
+  trainingEnded = output<void>();
+  removeCase = output<CaseLL>();
 
   @ViewChild('focusHere') timerEl!: ElementRef;
 
@@ -30,24 +26,31 @@ export class Trainer implements OnInit {
 
   private nullCase: CaseLL = { name: "", solutions: [""], scrambles: [""], isSelected: true };
 
-  currentCase = signal<CaseLL>(this.nullCase);
-  lastCase = signal<CaseLL>(this.nullCase);
-  currentTime = signal<number>(0);
-  isTimerStarting = signal<boolean>(false);
+  protected currentCase = signal<CaseLL>(this.nullCase);
+  protected lastCase = signal<CaseLL>(this.nullCase);
+  protected isTimerStarting = signal<boolean>(false);
+  protected currentTime = signal<number>(0);
+  protected currentTimeSplit = signal<number>(0);
 
-  onlyNames: string = "onlyNames";
-  onlyImgs: string = "onlyImgs";
+  protected onlyNames: string = "onlyNames";
+  protected onlyImgs: string = "onlyImgs";
   protected bothImgsNames: string = "bothImgsNames";
-  noneImgsNames: string = "noneImgsNames";
-  showRemainingCases = signal<string>(this.onlyNames);
+  protected noneImgsNames: string = "noneImgsNames";
+  protected showRemainingCases = signal<string>(this.onlyNames);
+
+  readonly timerIncrease: number = 10;
+  private isTimerGoing: boolean = false;
+  private isTimeSplitDone: boolean = false;
+  private interval: any = null;
+
+  protected isRemovingFastCases = signal<boolean>(false);
+  protected fastCaseTime = signal<number>(1);
+  protected isTimerSplitOn = signal<boolean>(false);
+
 
   onSelectShowRemainingCases(e: Event): void {
     this.showRemainingCases.set((e.target as HTMLSelectElement).value);
   }
-
-  readonly timerIncrease: number = 10;
-  private isTimerGoing: boolean = false;
-  private interval: any = null;
 
   /**
   * @param doSetLastCase if false, it will not set the last case
@@ -72,13 +75,13 @@ export class Trainer implements OnInit {
 
     this.nextCase(false);
   }
-  
+
   getImgPath(ccase: CaseLL | undefined): string {
     return DataReader.getImgPath(ccase);
   }
 
   // to set the focus on the timer
-  private setFocus(): void {
+  protected setFocus(): void {
     setTimeout(() => {
       this.timerEl.nativeElement.focus();
     }, 10);
@@ -87,16 +90,31 @@ export class Trainer implements OnInit {
   // Timer 1
   timerPressed(event: KeyboardEvent): void {
 
-    if (this.isTimerGoing) {
-      this.isTimerGoing = false;
-      clearInterval(this.interval);
-      this.nextCase();
+    if (this.isTimerGoing) { // stop timer
+
+      if (this.isTimerSplitOn() && !this.isTimeSplitDone) {
+        this.isTimeSplitDone = true;
+        console.log("split");
+
+      }
+      else {
+        this.isTimerGoing = false;
+        this.nextCase();
+
+        if (this.isRemovingFastCases())
+          if (this.currentTime() < this.fastCaseTime())
+            this.removeLastCase();
+
+        clearInterval(this.interval);
+      }
     }
     else {
-      if (event.code == "Space") {
+      if (event.code == "Space") { // starting timer
 
         this.isTimerStarting.set(true);
         this.currentTime.set(0);
+        this.isTimeSplitDone = false;
+        this.currentTimeSplit.set(0);
       }
     }
   }
@@ -109,7 +127,8 @@ export class Trainer implements OnInit {
       this.isTimerGoing = true;
       this.interval = setInterval(() => {
         this.currentTime.update((value) => { return value += this.timerIncrease / 1000 })
-        console.log(this.currentTime);
+        if (this.isTimerSplitOn() && !this.isTimeSplitDone)
+          this.currentTimeSplit.set(this.currentTime());
       }, this.timerIncrease);
     }
   }

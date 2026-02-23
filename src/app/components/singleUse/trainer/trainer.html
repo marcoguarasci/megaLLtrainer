@@ -1,22 +1,40 @@
 <p id="container-working-space">
     <span id="timer-and-scramble" class="big-container">
         <button (click)="nextCase()">next case</button>
-        <br/>
         @if(lastCase().name.length>0){
-            <button (click)="removeLastCase()">Remove last case</button>
+        <button (click)="removeLastCase()">Remove last case</button>
         }
 
         <p class="scramble">
             {{currentCase().scrambles[0]}}
         </p>
 
-        <p class="timer-container">
+        <p id="timer-container">
             <span class="timer" id="focus-here" #focusHere (keydown)="timerPressed($event)"
                 (keyup)="timerReleased($event)" [class.timer-starting]="isTimerStarting()" tabindex="1">
                 {{currentTime() | number: '1.2-2'}}
             </span>
+
+            @if(isTimerSplitOn()){
+                <span id="timer-splits-container">
+                <span class="recon-exec">Recognition: {{currentTimeSplit() | number: '1.2-2'}} </span>
+                <span class="recon-exec">Execution: {{currentTime() - currentTimeSplit() | number: '1.2-2'}}</span>
+            </span>
+        }
         </p>
-        
+
+        <input type="checkbox" [(ngModel)]="isRemovingFastCases" (change)="setFocus()" name="remove-fast-cases"
+            id="remove-fast-cases-input" />
+        <label for="remove-fast-cases-input">
+            Automatically remove cases faster than
+            <input type="text" [(ngModel)]="fastCaseTime" name="fast-case-time" id="fast-case-time-input">
+            <label for="fast-case-time-input">s</label>
+        </label>
+
+        <br>
+        <input type="checkbox" [(ngModel)]="isTimerSplitOn" (change)="setFocus()" name="split-timer-checkbox" id="split-timer-checkbox" />
+        <label for="split-timer-checkbox"> Add recognition timer split</label>
+
     </span>
 
     <span id="current-and-last-case" class="big-container">

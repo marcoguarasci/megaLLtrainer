@@ -1,4 +1,4 @@
-.subset-container{
+.subset-container {
 
     border: solid;
     border-width: 5px;
@@ -6,6 +6,16 @@
 
     display: flex;
     flex-wrap: wrap;
+}
+
+.subset-selected {
+    background-color: yellow;
+}
+
+.hide-show-arrow-img {
+    width: 25px;
+
+    padding: 5px;
 }
 
 .subset-header {
@@ -20,6 +30,8 @@
 
 .toggle-sets {
     float: right;
+    cursor: pointer;
+    user-select: none;
 }
 
 .sets-container {

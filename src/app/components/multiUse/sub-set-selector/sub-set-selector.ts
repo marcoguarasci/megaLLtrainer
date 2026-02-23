@@ -1,10 +1,7 @@
-import { AfterViewInit, Component, EventEmitter, inject, Input, input, OnChanges, OnDestroy, OnInit, Output, QueryList, signal, SimpleChanges, ViewChildren } from '@angular/core';
+import { Component, input, signal } from '@angular/core';
 import { SmallSetSelector } from '../small-set-selector/small-set-selector';
-import { DataReader } from '../../../service/data-reader';
-import { CaseLL } from '../../../../../public/utilites/CaseLL.type';
 import { SetLL } from '../../../../../public/utilites/SetLL.type';
 import { SubsetLL } from '../../../../../public/utilites/SubsetLL';
-import { Observable, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-sub-set-selector',
@@ -14,15 +11,21 @@ import { Observable, Subscription } from 'rxjs';
 })
 export class SubSetSelector {
 
-  OLLsPLLs = input.required<Array<SubsetLL>>();
+  public subsetLL = input.required<SubsetLL>();
 
-  protected toggleSubset(toggledSubset: SubsetLL): void {
-    toggledSubset.isSubsetSelected = !toggledSubset.isSubsetSelected;
+  protected showCases = signal<boolean>(false);
 
-    for (let setLL of toggledSubset.sets) {
-      setLL.isSetSelected = toggledSubset.isSubsetSelected;
+  protected toggleShowSets(): void {
+    this.showCases.update((value) => { return !value });
+  }
+
+  protected togglethisSubset(): void {
+    this.subsetLL().isSubsetSelected = !this.subsetLL().isSubsetSelected;
+
+    for (let setLL of this.subsetLL().sets) {
+      setLL.isSetSelected = this.subsetLL().isSubsetSelected;
       for (let ccase of setLL.cases)
-        ccase.isSelected = toggledSubset.isSubsetSelected;
+        ccase.isSelected = this.subsetLL().isSubsetSelected;
     }
   }
 

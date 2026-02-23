@@ -1,17 +1,23 @@
-<span class="subsets">
-    @for (subsetLL of OLLsPLLs(); track $index) {
-    <span class="subset-container">
-        <p class="subset-header">
-            <span class="subset-name" (click)="toggleSubset(subsetLL)">
-                {{subsetLL.subsetName}}
-            </span>
-            <span class="toggle-sets">aa</span>
-        </p>
-        <p class="sets-container">
-            @for(setLL of subsetLL.sets; track setLL.setName){
-            <app-small-set-selector [setLL]="setLL" (setToggled)="toggledSet($event, subsetLL)" #smallSetComponent />
+<span class="subset-container">
+    <p class="subset-header">
+        <span class="subset-name" [class.subset-selected]="subsetLL().isSubsetSelected" (click)="togglethisSubset()">
+            {{subsetLL().subsetName}}
+        </span>
+        <span class="toggle-sets" (click)="toggleShowSets()">
+            @if(showCases()){
+                <img src="./imgs/arrowUp.png" alt="hide" class="hide-show-arrow-img"/>
             }
-        </p>
-    </span>
+            @else{
+                <img src="./imgs/arrowDown.png" alt="show" class="hide-show-arrow-img"/>
+            }
+        </span>
+    </p>
+    @if(showCases()){
+
+    <p class="sets-container">
+        @for(setLL of subsetLL().sets; track setLL.setName){
+        <app-small-set-selector [setLL]="setLL" (setToggled)="toggledSet($event, subsetLL())" />
+        }
+    </p>
     }
 </span>

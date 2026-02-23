@@ -1,9 +1,7 @@
-import { Component, EventEmitter, input, OnInit, output, Output, QueryList, signal, ViewChildren } from '@angular/core';
+import { Component, EventEmitter, input, Output } from '@angular/core';
 import { CaseLL } from '../../../../../public/utilites/CaseLL.type';
 import { CaseShower } from "../case-shower/case-shower";
-import { CaseSelector } from '../../singleUse/case-selector/case-selector';
 import { SetLL } from '../../../../../public/utilites/SetLL.type';
-import { UnselectableCaseShower } from '../unselectable-case-shower/unselectable-case-shower';
 
 @Component({
   selector: 'app-small-set-selector',

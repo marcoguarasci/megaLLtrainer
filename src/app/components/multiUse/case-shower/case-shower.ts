@@ -1,4 +1,4 @@
-import { Component, EventEmitter, inject, input, OnChanges, OnInit, Output, signal, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, input, Output } from '@angular/core';
 import { CaseLL } from '../../../../../public/utilites/CaseLL.type';
 import { DataReader } from '../../../service/data-reader';
 
@@ -14,7 +14,7 @@ export class CaseShower {
   ccase = input.required<CaseLL>();
 
   public removeCase(removedCase: CaseLL): void {
-    if (removedCase.name == this.ccase().name) { 
+    if (removedCase.name == this.ccase().name) {
       this.ccase().isSelected = false;
       this.caseToggled.emit(this.ccase());
     }
@@ -22,7 +22,7 @@ export class CaseShower {
 
   toggleCase(): void {
     this.ccase().isSelected = !this.ccase().isSelected;
-      this.caseToggled.emit(this.ccase());
+    this.caseToggled.emit(this.ccase());
   }
 
   imgPath(): string {
