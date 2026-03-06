@@ -2628,18 +2628,1510 @@
     ],
     "PLLs": [
         {
-            "subsetName": "CPLL",
+            "subsetName": "CPLLs",
             "sets": [
                 {
                     "setName": "A",
                     "cases": [
                         {
-                            "name": "",
+                            "name": "A1+",
                             "scrambles": [
-                                ""
+                                "R U R' F' U2 F R U' R' F' U' F R U2 R' F' U F"
                             ],
                             "solutions": [
-                                ""
+                                "F' R' F R U' R' F' R2 U R' U' R' F R"
+                            ]
+                        },
+                        {
+                            "name": "A1-",
+                            "scrambles": [
+                                "F' U' F R U2' R' F' U F R U R' F' U2' F R U' R'"
+                            ],
+                            "solutions": [
+                                "R' F' R U R U' R2' F R U R' F' R F"
+                            ]
+                        },
+                        {
+                            "name": "A2+",
+                            "scrambles": [
+                                "F' U2 F R U2' R' U R U R' F' U' F U2 F' U2 F"
+                            ],
+                            "solutions": [
+                                "R' U2' R U' R' F' R U R' U' R' F R U2' R",
+                                "(U) BR' R' U L U' R' U L' U' R2 BR"
+                            ]
+                        },
+                        {
+                            "name": "A2-",
+                            "scrambles": [
+                                "F' U2' F R U2 R' F' U2 F U2' F' U' F R U' R' F' U' F"
+                            ],
+                            "solutions": [
+                                "R' U2 R' F' R U R U' R' F R U R' U2 R",
+                                "(U) BR' R2' U L U' R U L' U' R BR"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "setName": "E",
+                    "cases": [
+                        {
+                            "name": "E1",
+                            "scrambles": [
+                                "R U2' R' F' U2 F U' F' U' F U' R U2' R' F' U2 F U' F' U' F"
+                            ],
+                            "solutions": [
+                                "R U R' U R' U' R F' R U R' U' R' F R2 U' R2' U R"
+                            ]
+                        },
+                        {
+                            "name": "E2",
+                            "scrambles": [
+                                "R U2 R' F' U F R U2' R' U2 F' U2' F R U2 R' U2' F' U F"
+                            ],
+                            "solutions": [
+                                "F U' R U' R U R' U R U2' R' U R' U' R U2 R' F'"
+                            ]
+                        },
+                        {
+                            "name": "E3",
+                            "scrambles": [
+                                "F' U F R U2' R' F' U2' F R U2' R' F' U2' F U' F' U2' F R U2' R'"
+                            ],
+                            "solutions": [
+                                "L' R U2 R' U' R U R' U' R U R' U' R U' R' L"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "setName": "H",
+                    "cases": [
+                        {
+                            "name": "H1+",
+                            "scrambles": [
+                                "F' U F U F' U2' F R U2 R' U R U R' U2' R U2' R'"
+                            ],
+                            "solutions": [
+                                "F R U2 R' U' R U' R' F' R' y' R' U' R U' R' U2 R BR"
+                            ]
+                        },
+                        {
+                            "name": "H1-",
+                            "scrambles": [
+                                "R U2 R' U2 R U' R' U' R U2' R' F' U2 F U' F' U' F"
+                            ],
+                            "solutions": [
+                                "F' R U R' U' R' F R U' R U2' R' U R U R' U2' R U2' R'"
+                            ]
+                        },
+                        {
+                            "name": "H2+",
+                            "scrambles": [
+                                "R U2' R' F' U2 F U2 R U2 R' F' U F R U2 R' F' U2 F R U2' R'"
+                            ],
+                            "solutions": [
+                                "R2 U2 R2' U' R2 U' R2' y' R2' U' R2 U' R2' U2 R2"
+                            ]
+                        },
+                        {
+                            "name": "H2-",
+                            "scrambles": [
+                                "R U2 R' F' U2' F R U2' R' F' U' F R U2' R' U2' F' U2' F R U2 R'"
+                            ],
+                            "solutions": [
+                                "R2' U2' R2 U R2' U R2 y R2 U R2' U R2 U2' R2'"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "setName": "K",
+                    "cases": [
+                        {
+                            "name": "K1+",
+                            "scrambles": [
+                                "F' U2' F U2 F' U' F U2 F' U' F U F' U F U2' F' U' F"
+                            ],
+                            "solutions": [
+                                "R2 U2 R2' U R2 U' R2' U R2 U' R2' U R2 U2 R2'"
+                            ]
+                        },
+                        {
+                            "name": "K1-",
+                            "scrambles": [
+                                "F' U F U2 F' U' F U' F' U F U2' F' U F U2' F' U2 F"
+                            ],
+                            "solutions": [
+                                "R2 U2' R2' U' R2 U R2' U' R2 U R2' U' R2 U2' R2'"
+                            ]
+                        },
+                        {
+                            "name": "K2+",
+                            "scrambles": [
+                                "F' U2' F R U2 R' F' U2' F U2 F' U' F R U2' R' U' R U2 R' F' U' F"
+                            ],
+                            "solutions": [
+                                "R' U2 R U' R' U2 R U2' R' U' R U2' R' U R U2' R' U R"
+                            ]
+                        },
+                        {
+                            "name": "K2-",
+                            "scrambles": [
+                                "R U2 R' F' U F U2 F' U F U R U2 R' U' R U2' R' F' U2 F"
+                            ],
+                            "solutions": [
+                                "R2 U2' R2' U' R2 U2' R' U R' U' R' F R2 U' R' U' R U R' F"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "subsetName": "EPLLs",
+            "sets": [
+                {
+                    "setName": "Q",
+                    "cases": [
+                        {
+                            "name": "Q1+",
+                            "scrambles": [
+                                "R U' R' U' R U2 R' U2 F' U F U F' U2' F"
+                            ],
+                            "solutions": [
+                                "R2 U2 R2' U R2 U2 R2' U' R2 U2 R2' U R2 U2 R2'"
+                            ]
+                        },
+                        {
+                            "name": "Q1-",
+                            "scrambles": [
+                                "F' U F U F' U2' F U2' R U' R' U' R U2 R'"
+                            ],
+                            "solutions": [
+                                "R2 U2' R2' U' R2 U2' R2' U R2 U2' R2' U' R2 U2' R2'"
+                            ]
+                        },
+                        {
+                            "name": "Q2+",
+                            "scrambles": [
+                                "R U2' R' U' R U2' R' F' U2 F U F' U2 F"
+                            ],
+                            "solutions": [
+                                "R' U2' R U' R' U2' R2 U2' R' U' R U2' R'"
+                            ]
+                        },
+                        {
+                            "name": "Q2-",
+                            "scrambles": [
+                                "F' U2 F U F' U2 F R U2' R' U' R U2' R'"
+                            ],
+                            "solutions": [
+                                "R U2' R' U' R U2' R' U2' R' U2' R U' R' U2' R"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "setName": "U",
+                    "cases": [
+                        {
+                            "name": "U1+",
+                            "scrambles": [
+                                "R U R' F' U' F R U' R' F' U' F R U R' U' F' U F R U R' F' U F"
+                            ],
+                            "solutions": [
+                                "R' U' R U' R U R2' U R U' R U' R' U2"
+                            ]
+                        },
+                        {
+                            "name": "U1-",
+                            "scrambles": [
+                                "R U' R' U' F' U2' F R U2 R' U' F' U F R U2' R' F' U2 F"
+                            ],
+                            "solutions": [
+                                "R U R' U R' U' R2 U' R' U R' U R"
+                            ]
+                        },
+                        {
+                            "name": "U2+",
+                            "scrambles": [
+                                "R U2' R' U2' F' U F U F' U2 F U2 F' U' F R U' R'"
+                            ],
+                            "solutions": [
+                                "R U R' U2 R' U' R U' R U R2' U R U' R U2' R'"
+                            ]
+                        },
+                        {
+                            "name": "U2-",
+                            "scrambles": [
+                                "R U R' F' U F U2' F' U2' F U' F' U' F U2 R U2 R'"
+                            ],
+                            "solutions": [
+                                "R U2 R' U R' U' R2 U' R' U R' U R U2' R U' R'"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "setName": "Z",
+                    "cases": [
+                        {
+                            "name": "Z1",
+                            "scrambles": [
+                                "R U' R' U' R U2 R' U2 R U2 R' U2 R U' R' U' R U2' R'"
+                            ],
+                            "solutions": [
+                                "R' U' F R U' R' U' R U2 R' F' R F U' F' R' U2 R"
+                            ]
+                        },
+                        {
+                            "name": "Z2",
+                            "scrambles": [
+                                "R U2 R' F' U2 F U' F' U' F U R U' R' U' R U2 R' U2' R U' R'"
+                            ],
+                            "solutions": [
+                                "R' U2' R' U' R F R' F' U R F' U' F U2' R"
+                            ]
+                        },
+                        {
+                            "name": "Z3",
+                            "scrambles": [
+                                "R U R' F' U2' F R U' R' F' U2' F U' R U' R' U2 F' U2 F"
+                            ],
+                            "solutions": [
+                                "R' L' U2 L U R y L R U2 L' U R'"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "subsetName": "'Easy' PLLs",
+            "sets": [
+                {
+                    "setName": "D",
+                    "cases": [
+                        {
+                            "name": "D+",
+                            "scrambles": [
+                                "R U2' R' U' F' U2 F U' F' U' F U' R U' R'"
+                            ],
+                            "solutions": [
+                                "R U2 R' U' R U R' U R U2' R' U2 R U2 R'"
+                            ]
+                        },
+                        {
+                            "name": "D-",
+                            "scrambles": [
+                                "F' U2 F U R U2' R' U R U R' U F' U F"
+                            ],
+                            "solutions": [
+                                "R' U2' R U R' U' R U' R' U2 R U2' R' U2' R"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "setName": "F",
+                    "cases": [
+                        {
+                            "name": "F1+",
+                            "scrambles": [
+                                "F' U' F R U' R' U F' U2' F R U' R' F' U' F R U2 R' F' U2 F R U2' R'"
+                            ],
+                            "solutions": [
+                                "R2 U2 R2' U R2 U2 R2'"
+                            ]
+                        },
+                        {
+                            "name": "F1-",
+                            "scrambles": [
+                                "R U R' F' U2 F R U' R' U R U2 R' U2' F' U2' F U R U R'"
+                            ],
+                            "solutions": [
+                                "R2 U2' R2' U' R2 U2' R2'"
+                            ]
+                        },
+                        {
+                            "name": "F2+",
+                            "scrambles": [
+                                "R U R' F' U' F U R U R' U2 R U R' F' U2 F R U2' R'"
+                            ],
+                            "solutions": [
+                                "R U R' U2 R' U2' R2 U' R' U R' U2 R"
+                            ]
+                        },
+                        {
+                            "name": "F2-",
+                            "scrambles": [
+                                "R U2 R' F' U F U2' R U' R' U2' F' U' F R U2' R' F' U F"
+                            ],
+                            "solutions": [
+                                "R' U' R U2' R U2 R2' U R U' R U2' R'"
+                            ]
+                        },
+                        {
+                            "name": "F3+",
+                            "scrambles": [
+                                "R U R' F' U2' F R U' R' U2' F' U' F U2' R U R' F' U2 F"
+                            ],
+                            "solutions": [
+                                "R' U2' R U' R U R2' U2 R U2' R U' R'"
+                            ]
+                        },
+                        {
+                            "name": "F3-",
+                            "scrambles": [
+                                "F' U' F R U2 R' F' U F U2 R U R' U2 F' U' F R U2' R'"
+                            ],
+                            "solutions": [
+                                "R U2 R' U R' U' R2 U2' R' U2 R' U R"
+                            ]
+                        },
+                        {
+                            "name": "F4+",
+                            "scrambles": [
+                                "R U2' R' U2' F' U' F U' F' U F R U2' R' U2' R U2 R' F' U2' F"
+                            ],
+                            "solutions": [
+                                "R U R' U R2 U2' R2' U2' R U2 R U2 R' U2' R'"
+                            ]
+                        },
+                        {
+                            "name": "F4-",
+                            "scrambles": [
+                                "F' U2 F U2 R U R' U R U' R' F' U2 F U2 F' U2' F R U2 R'"
+                            ],
+                            "solutions": [
+                                "R' U' R U' R2' U2 R2 U2 R' U2' R' U2' R U2 R  "
+                            ]
+                        },
+                        {
+                            "name": "F5+",
+                            "scrambles": [
+                                "R U2 R' F' U2 F U2 R U2 R' F' U F U' R U2' R' F' U2 F R U' R'"
+                            ],
+                            "solutions": [
+                                "R U2 R U2' R' U2' R' U2 R2 U2 R2' U' R U' R'"
+                            ]
+                        },
+                        {
+                            "name": "F5-",
+                            "scrambles": [
+                                "R U R' U R U' R' F' U2 F U2 F' U2' F R U2 R' U F' U2' F"
+                            ],
+                            "solutions": [
+                                "R' U2' R' U2 R U2 R U2' R2' U2' R2 U R' U R"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "setName": "J",
+                    "cases": [
+                        {
+                            "name": "J1+",
+                            "scrambles": [
+                                "R U R' U' R U R' F' U2 F U' F' U' F R U' R'"
+                            ],
+                            "solutions": [
+                                "R U R' F' R U R' U' R' F R2 U' R'"
+                            ]
+                        },
+                        {
+                            "name": "J1-",
+                            "scrambles": [
+                                "R U' R' U2 R U2 R' U' F' U' F U2 R U2' R' F' U2' F"
+                            ],
+                            "solutions": [
+                                "F U' R' F R2 U' R' U' R U R' F' R U R' F'"
+                            ]
+                        },
+                        {
+                            "name": "J2+",
+                            "scrambles": [
+                                "R U R' U R U R' F' U2' F R U2' R' U2 R U R' U2' F' U2' F"
+                            ],
+                            "solutions": [
+                                "R' U2' R U2 R' U R U R U2 R' U' R U' R2' U' R"
+                            ]
+                        },
+                        {
+                            "name": "J2-",
+                            "scrambles": [
+                                "R U' R' U F' U' F U' F' U2 F R U R' U2 R U2' R'"
+                            ],
+                            "solutions": [
+                                "R U2 R' U2' R U' R' U' R' U2' R U R' U R2 U R'"
+                            ]
+                        },
+                        {
+                            "name": "J3+",
+                            "scrambles": [
+                                "R U2 R' U' R U' R' F' U2 F U F' U2 F R U R' U2 R U2 R'"
+                            ],
+                            "solutions": [
+                                "R U R' U' R' U2' R U R U R2' U R2 U2 R2' U2' R"
+                            ]
+                        },
+                        {
+                            "name": "J3-",
+                            "scrambles": [
+                                "F' U2' F R U' R' F' U2 F R U R' U' F' U2 F R U2 R' F' U F R U2 R'"
+                            ],
+                            "solutions": [
+                                "R U' R2' U' R U' R' U2 R U R U R' U2 R U2' R'"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "setName": "M",
+                    "cases": [
+                        {
+                            "name": "M",
+                            "scrambles": [
+                                "R U R' F' U F R U' R' U2 R U2 R' F' U2' F R U' R' U2 R U2' R'"
+                            ],
+                            "solutions": [
+                                "R U R' U2' R' U2' R U R' U R2 U' R' U2 R U' R' U R U' R'"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "setName": "N",
+                    "cases": [
+                        {
+                            "name": "N1+",
+                            "scrambles": [
+                                "R U2 R' F' U F U F' U2' F R U' R' U R U2' R'"
+                            ],
+                            "solutions": [
+                                "R U2 R' F' R U R' U' R' F R2 U2' R'"
+                            ]
+                        },
+                        {
+                            "name": "N1-",
+                            "scrambles": [
+                                "F' U2' F R U' R' U' R U2 R' F' U F U' F' U2 F"
+                            ],
+                            "solutions": [
+                                "R' U2 R' U2' R U' R' U2' R U2 R"
+                            ]
+                        },
+                        {
+                            "name": "N2+",
+                            "scrambles": [
+                                "R U2 R' F' U2 F R U' R' U2 R U' R' U F' U2 F U2' R U R'"
+                            ],
+                            "solutions": [
+                                "R' L' U2' R U' L R' U L' U2' R U2' L"
+                            ]
+                        },
+                        {
+                            "name": "N2-",
+                            "scrambles": [
+                                "F' U F U2' R U2 R' U F' U' F U2 F' U' F R U2 R' F' U2 F"
+                            ],
+                            "solutions": [
+                                "R L U2 L' U R' L U' R U2 L' U2 R'"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "setName": "T",
+                    "cases": [
+                        {
+                            "name": "T1",
+                            "scrambles": [
+                                "R U R' F' U' F R U' R' U2 F' U' F R U' R' F' U F"
+                            ],
+                            "solutions": [
+                                "R U R' U' R' F R2 U' R' U' R U R' F'"
+                            ]
+                        },
+                        {
+                            "name": "T2+",
+                            "scrambles": [
+                                "R U2 R' U2' R U R' F' U' F U2 F' U' F R U' R'"
+                            ],
+                            "solutions": [
+                                "R' U2' R U2 R' F R U R' U' R' F' R2"
+                            ]
+                        },
+                        {
+                            "name": "T2-",
+                            "scrambles": [
+                                "R U R' F' U F U2' F' U F R U' R' U2 R U2' R'"
+                            ],
+                            "solutions": [
+                                "R2' F R U R U' R' F' R U2' R' U2 R"
+                            ]
+                        },
+                        {
+                            "name": "T3+",
+                            "scrambles": [
+                                "R U2 R' U R U2 R' F' U2' F U F' U F R U2 R' U' R U' R'"
+                            ],
+                            "solutions": [
+                                "R2 U2 R2' U R2 U' R2' U R2 U2 R2'"
+                            ]
+                        },
+                        {
+                            "name": "T3-",
+                            "scrambles": [
+                                "F' U2' F U' F' U2' F R U2 R' U' R U' R' F' U2' F U F' U F"
+                            ],
+                            "solutions": [
+                                "R2 U2' R2' U' R2 U R2' U' R2 U2' R2'"
+                            ]
+                        },
+                        {
+                            "name": "T4+",
+                            "scrambles": [
+                                "R U R' F' U2 F U2 F' U F R U R' F' U2 F U2' F' U2' F U2' F' U2 F"
+                            ],
+                            "solutions": [
+                                "R U R' F' R U R' U' R' F R U' R' F R2 U' R' U' R U R' F'"
+                            ]
+                        },
+                        {
+                            "name": "T4-",
+                            "scrambles": [
+                                "R U2 R' U' F' U' F U' F' U2 F R U2' R' F' U F U2' F' U F"
+                            ],
+                            "solutions": [
+                                "R' U' R U2' R2' U2' R2 U' R2' U2' R2 U R' U R"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "setName": "V",
+                    "cases": [
+                        {
+                            "name": "V1+",
+                            "scrambles": [
+                                "F' U' F R U R' F' U' F U F' U' F R U' R' U F' U2 F"
+                            ],
+                            "solutions": [
+                                "R' U2 R' DR' R U' R' DR R U R U' R' U' R"
+                            ]
+                        },
+                        {
+                            "name": "V1-",
+                            "scrambles": [
+                                "R U2 R' U2 F' U' F U2' F' U2' F U2 R U2 R'"
+                            ],
+                            "solutions": [
+                                "R U2 R2' F R F' R U' R' F' U F R U' R'"
+                            ]
+                        },
+                        {
+                            "name": "V2+",
+                            "scrambles": [
+                                "F' U2 F U2 R U2' R' U2' R U' R' U2 F' U2 F"
+                            ],
+                            "solutions": [
+                                "R' U R U R' U' R' DR' R U R' DR R U2' R"
+                            ]
+                        },
+                        {
+                            "name": "V2-",
+                            "scrambles": [
+                                "R U2' R' U2' F' U2 F U2 F' U F U2' R U2' R'"
+                            ],
+                            "solutions": [
+                                "R U R' F' U' F R U R' F R' F' R2 U2' R'"
+                            ]
+                        },
+                        {
+                            "name": "V3+",
+                            "scrambles": [
+                                "F' U F U2' F' U2 F R U2' R' F' U F U2' R U2' R' F' U2' F R U2 R'"
+                            ],
+                            "solutions": [
+                                "R' U2 R U' F R U R' U' R' F' U' R U R U' R'"
+                            ]
+                        },
+                        {
+                            "name": "V3-",
+                            "scrambles": [
+                                "F' U2' F R U R' F' U' F U F' U' F R U2' R' U' R U2 R'"
+                            ],
+                            "solutions": [
+                                "R U2' R' U BR' R' U' R U R BR U R' U' R' U R"
+                            ]
+                        },
+                        {
+                            "name": "V4+",
+                            "scrambles": [
+                                "F' U2 F U' F' U2' F R U' R' U R U' R' F' U F R U2' R'"
+                            ],
+                            "solutions": [
+                                "R U R' U' R' U F R U R U' R' F' U R' U2' R"
+                            ]
+                        },
+                        {
+                            "name": "V4-",
+                            "scrambles": [
+                                "R U2' R' U R U2 R' F' U F U' F' U F R U' R' F' U2 F"
+                            ],
+                            "solutions": [
+                                "R' U' R U R U' BR' R' U' R' U R BR U' R U2 R"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "setName": "W",
+                    "cases": [
+                        {
+                            "name": "W",
+                            "scrambles": [
+                                "F' U F R U2' R' U2 F' U' F U' F' U2 F U R U' R' F' U2 F"
+                            ],
+                            "solutions": [
+                                "R' U2' R' U2 R U2 R U' R2' U2 R2 U2 R' U R"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "setName": "Y",
+                    "cases": [
+                        {
+                            "name": "Y1+",
+                            "scrambles": [
+                                "R U2' R' F' U2' F U2 R U2 R' F' U2' F R U R' F' U F"
+                            ],
+                            "solutions": [
+                                "F R U' R' U' R U R' F' R U R' U' R' F R F'"
+                            ]
+                        },
+                        {
+                            "name": "Y1-",
+                            "scrambles": [
+                                "F' U2 F R U2 R' U2' F' U2' F R U2 R' F' U' F R U' R'"
+                            ],
+                            "solutions": [
+                                "F R' F' R U R U' R' F R U' R' U R U R' F'"
+                            ]
+                        },
+                        {
+                            "name": "Y2+",
+                            "scrambles": [
+                                "F' U' F U' F' U2 F R U R' U2 R U2 R'"
+                            ],
+                            "solutions": [
+                                "R2 U2 R2' U2' R2 U2' R2' U2' R2 U2 R2'"
+                            ]
+                        },
+                        {
+                            "name": "Y2-",
+                            "scrambles": [
+                                "R U2' R' U2' R U' R' F' U2' F U F' U F"
+                            ],
+                            "solutions": [
+                                "R2 U2 R2' U2' R2 U R2' U2' R2 U2 R2'"
+                            ]
+                        },
+                        {
+                            "name": "Y3+",
+                            "scrambles": [
+                                "F' U' F U' F' U' F U R U' R' F' U2 F R U2 R' U2' F' U2' F"
+                            ],
+                            "solutions": [
+                                "R2 U R2' U R2 U2' R2' U2 R2 U R2' U R2 U2' R2'"
+                            ]
+                        },
+                        {
+                            "name": "Y3-",
+                            "scrambles": [
+                                "R U2' R' U2' F' U2 F R U2 R' F' U' F U R U' R' U' R U' R'"
+                            ],
+                            "solutions": [
+                                "R2 U' R2' U' R2 U2 R2' U2' R2 U' R2' U' R2 U2 R2'"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "subsetName": "'Medium' PLLs",
+            "sets": [
+                {
+                    "setName": "B",
+                    "cases": [
+                        {
+                            "name": "B1+",
+                            "scrambles": [
+                                "F' U2 F U2' F' U F U R U2' R' U' R U2' R' F' U2' F"
+                            ],
+                            "solutions": [
+                                "R U R' U' R' U2' R U R U' R2' U2 R"
+                            ]
+                        },
+                        {
+                            "name": "B1-",
+                            "scrambles": [
+                                "R U2' R' F' U2' F U' F' U2' F U R U R' U2' R U2 R'"
+                            ],
+                            "solutions": [
+                                "R' U' R U R U2 R' U' R' U R2 U2' R'"
+                            ]
+                        },
+                        {
+                            "name": "B1-",
+                            "scrambles": [
+                                "R U2' R' F' U2' F U' F' U2' F U R U R' U2' R U2 R'"
+                            ],
+                            "solutions": [
+                                "R' U' R U R U2 R' U' R' U R2 U2' R'"
+                            ]
+                        },
+                        {
+                            "name": "B2-",
+                            "scrambles": [
+                                "R U R' U F' U F U F' U2' F R U2' R' F' U2 F U F' U2 F"
+                            ],
+                            "solutions": [
+                                "R2' U' R2 U2' R' U2 R' U' R U R' U R2 U2' R' U' R"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "setName": "C",
+                    "cases": [
+                        {
+                            "name": "C1+",
+                            "scrambles": [
+                                "R U2' R' U' F' U F R U' R' U' R U2 R' F' U F U2' R U2' R'"
+                            ],
+                            "solutions": [
+                                "R U2 R' U' R U2' R' U R U R2' U' R U' R U R2' U R"
+                            ]
+                        },
+                        {
+                            "name": "C1-",
+                            "scrambles": [
+                                "F' U2 F U R U' R' F' U F U F' U2' F R U' R' U2 F' U2 F"
+                            ],
+                            "solutions": [
+                                "R' U2' R U R' U2 R U' R' U' R2 U R' U R' U' R2 U' R'"
+                            ]
+                        },
+                        {
+                            "name": "C2+",
+                            "scrambles": [
+                                "F' U' F U' F' U2 F R U2' R' U' R U' R' U R U2' R'"
+                            ],
+                            "solutions": [
+                                "R' U' R U' R U2 R2' U' R2 U' R2' U2' R U R' U2 R"
+                            ]
+                        },
+                        {
+                            "name": "C2-",
+                            "scrambles": [
+                                "R U R' U R U2' R' F' U2 F U F' U F U' F' U2 F"
+                            ],
+                            "solutions": [
+                                "R U R' U R' U2' R2 U R2' U R2 U2 R' U' R U2' R'"
+                            ]
+                        },
+                        {
+                            "name": "C3+",
+                            "scrambles": [
+                                "R U' R' U' F' U2 F U F' U' F R U2 R' U' R U' R' F' U2 F R U' R'"
+                            ],
+                            "solutions": [
+                                "R2 U2 R2' U R2 U' R2' U2' R2 U' R2' U2 R2 U2' R2'"
+                            ]
+                        },
+                        {
+                            "name": "C3-",
+                            "scrambles": [
+                                "F' U' F R U' R' F' U' F U R U R' U2 R U R' F' U2 F R U' R' F' U F"
+                            ],
+                            "solutions": [
+                                "R2 U2' R2' U' R2 U R2' U2 R2 U R2' U2' R2 U2 R2'"
+                            ]
+                        },
+                        {
+                            "name": "C4+",
+                            "scrambles": [
+                                "R U2 R' U' R U' R' U2 R U2' R' U2' R U R' U' R U' R'"
+                            ],
+                            "solutions": [
+                                "R2 U2' R2' U' R2 U2' R2' U' R2 U2 R2' U R2 U2 R2'"
+                            ]
+                        },
+                        {
+                            "name": "C4-",
+                            "scrambles": [
+                                "F' U2' F U F' U F U2' F' U2 F U2 F' U' F U F' U F"
+                            ],
+                            "solutions": [
+                                "R2 U2 R2' U R2 U2 R2' U R2 U2' R2' U' R2 U2' R2'"
+                            ]
+                        },
+                        {
+                            "name": "C5+",
+                            "scrambles": [
+                                "R U2 R' U F' U F U F' U2' F U R U R'"
+                            ],
+                            "solutions": [
+                                "R U2 R' U2 R U2 R U2 R' U R' U' R2 U2' R' U' R'"
+                            ]
+                        },
+                        {
+                            "name": "C5-",
+                            "scrambles": [
+                                "F' U2' F U' R U' R' U' R U2 R' U' F' U' F"
+                            ],
+                            "solutions": [
+                                "R' U2' R U2' R' U2' R' U2' R U' R U R2' U2 R U R"
+                            ]
+                        },
+                        {
+                            "name": "C6+",
+                            "scrambles": [
+                                "F' U F U F' U2' F R U' R' F' U2 F U' F' U' F U' R U R'"
+                            ],
+                            "solutions": [
+                                "R U' R' U2 R2 U R' U2 R U' R' U' R U' R' U' R'"
+                            ]
+                        },
+                        {
+                            "name": "C6-",
+                            "scrambles": [
+                                "R U2 R' F' U2 F R U' R' F' U F U F' U2 F U R U2' R' F' U2 F R U' R'"
+                            ],
+                            "solutions": [
+                                "R' U R U2' R2' U' R U2' R' U R U R' U R U R"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "setName": "P",
+                    "cases": [
+                        {
+                            "name": "P1+",
+                            "scrambles": [
+                                "R U R' U R U R' U2' F' U2 F U2 F' U F U2 R U' R'"
+                            ],
+                            "solutions": [
+                                "R' F R2 U R' U R U2' R' U R' F' R F U' F'"
+                            ]
+                        },
+                        {
+                            "name": "P1-",
+                            "scrambles": [
+                                "R U R' F' U2' F R U' R' F' U2 F U2 F' U' F U R U' R' F' U F"
+                            ],
+                            "solutions": [
+                                "R' U2' F' U2 F R2 U2' R' F R' F' R2 U2 R'"
+                            ]
+                        },
+                        {
+                            "name": "P2+",
+                            "scrambles": [
+                                "F' U F R U2' R' U2 R U R' U R U2 R' F' U2' F R U R' F' U2' F"
+                            ],
+                            "solutions": [
+                                "F U F' R' F R U' R U2 R' U' R U' R2' F' R"
+                            ]
+                        },
+                        {
+                            "name": "P2-",
+                            "scrambles": [
+                                "F' U2' F U' R U' R' U' F' U2' F U2 R U2 R' F' U2' F R U R'"
+                            ],
+                            "solutions": [
+                                "R U2' R2' F R F' R U2 R2' F' U2' F U2 R"
+                            ]
+                        },
+                        {
+                            "name": "P3+",
+                            "scrambles": [
+                                "R U2' R' U2' R U2' R' U2' F' U2' F U F' U F U R U2' R'"
+                            ],
+                            "solutions": [
+                                "F R U' R' U' R U R U2 R' U' R U' R2' F'"
+                            ]
+                        },
+                        {
+                            "name": "P3-",
+                            "scrambles": [
+                                "R U' R' U' R U R' U' F' U2 F U' F' U' F U R U R'"
+                            ],
+                            "solutions": [
+                                "BR' R' U R U R' U' R' U2' R U R' U R2 BR"
+                            ]
+                        },
+                        {
+                            "name": "P4+",
+                            "scrambles": [
+                                "F' U2 F U F' U2 F R U R' U2' F' U' F U2' F' U2' F R U' R'"
+                            ],
+                            "solutions": [
+                                "F R2 U R' U R U2' R' U' R' U R U R' F'"
+                            ]
+                        },
+                        {
+                            "name": "P4-",
+                            "scrambles": [
+                                "R U' R' U' F' U F U F' U2' F U R U' R' U R U R'"
+                            ],
+                            "solutions": [
+                                "BR' R2' U' R U' R' U2 R U R U' R' U' R BR"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "setName": "R",
+                    "cases": [
+                        {
+                            "name": "R1+",
+                            "scrambles": [
+                                "R U R' F' U2 F R U' R' U' R U R' F' U' F R U2 R' F' U F U2 R U' R'"
+                            ],
+                            "solutions": [
+                                "R' U2 R U' R2' U2 R2 U R' U' R' U2' R U' R"
+                            ]
+                        },
+                        {
+                            "name": "R1-",
+                            "scrambles": [
+                                "F' U' F R U2' R' F' U F U F' U' F R U R' F' U2' F R U' R' U2' F' U F"
+                            ],
+                            "solutions": [
+                                "R U2' R' U R2 U2' R2' U' R U R U2 R' U R'"
+                            ]
+                        },
+                        {
+                            "name": "R2+",
+                            "scrambles": [
+                                "F' U2' F U' R U' R' U R U2 R' F' U2 F R U2' R' F' U2' F R U' R'"
+                            ],
+                            "solutions": [
+                                "R' U R' U2 R U R U' R2' U2' R2 U R' U2' R"
+                            ]
+                        },
+                        {
+                            "name": "R2-",
+                            "scrambles": [
+                                "R U2 R' F' U2' F R U' R' U R U' R' F' U2' F U R U R' F' U F"
+                            ],
+                            "solutions": [
+                                "R U' R U2' R' U' R' U R2 U2 R2' U' R U2 R'"
+                            ]
+                        },
+                        {
+                            "name": "R3+",
+                            "scrambles": [
+                                "R U2' R' F' U2 F R U2 R' U' F' U F R U' R' F' U2 F R U2' R'"
+                            ],
+                            "solutions": [
+                                "R U R2' U R U R U' R' U' R U' R2' U' R U' R' U R"
+                            ]
+                        },
+                        {
+                            "name": "R3-",
+                            "scrambles": [
+                                "F' U' F R U' R' F' U F U2' F' U2' F R U2' R' U2' R U R' F' U F"
+                            ],
+                            "solutions": [
+                                "R' U' R2 U' R' U' R' U R U R' U R2 U R' U R U' R'"
+                            ]
+                        },
+                        {
+                            "name": "R4+",
+                            "scrambles": [
+                                "R U2 R' F' U2' F R U R' F' U' F U R U2' R' F' U2' F R U2 R'"
+                            ],
+                            "solutions": [
+                                "R' U' R U R' U R2 U R' U R U R' U' R' U' R2 U' R'"
+                            ]
+                        },
+                        {
+                            "name": "R4-",
+                            "scrambles": [
+                                "F' U2' F R U2 R' F' U' F R U R' U' F' U2 F R U2 R' F' U2' F"
+                            ],
+                            "solutions": [
+                                "R U R' U' R U' R2' U' R U' R' U' R U R U R2' U R"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "setName": "S",
+                    "cases": [
+                        {
+                            "name": "S1+",
+                            "scrambles": [
+                                "F' U2' F U F' U F R U2' R' U2' R U' R'"
+                            ],
+                            "solutions": [
+                                "R U R' U2 R U2 R' U' R' U' R U' R' U2 R"
+                            ]
+                        },
+                        {
+                            "name": "S1-",
+                            "scrambles": [
+                                "F' U2 F R U' R' U R U2 R' F' U F R U2' R'"
+                            ],
+                            "solutions": [
+                                "R' U' R U2' R' U2' R U R U R' U R U2' R'"
+                            ]
+                        },
+                        {
+                            "name": "S2+",
+                            "scrambles": [
+                                "F' U2' F R U2' R' F' U2' F R U R' F' U' F U2 F' U2 F U F' U' F"
+                            ],
+                            "solutions": [
+                                "R2 U2' R2' U2' R2 U' R' U2 R' U' R' U2' R2 U R2' U R"
+                            ]
+                        },
+                        {
+                            "name": "S2-",
+                            "scrambles": [
+                                "R U R' U R U' R' U R U' R' F' U' F U2' F' U2' F R U2' R'"
+                            ],
+                            "solutions": [
+                                "R2' U2 R2 U2 R2' U R U2' R U R U2 R2' U' R2 U' R'"
+                            ]
+                        },
+                        {
+                            "name": "S3+",
+                            "scrambles": [
+                                "F' U2' F R U2' R' U2' R U' R' F' U' F U F' U' F U F' U F"
+                            ],
+                            "solutions": [
+                                "R' U' R2 U' R2' U2 R U R U2' R U R2' U2 R2 U2 R2'"
+                            ]
+                        },
+                        {
+                            "name": "S3-",
+                            "scrambles": [
+                                "R U2' R' U R U R' U2' R U R' U R U2' R' F' U' F U2 F' U' F"
+                            ],
+                            "solutions": [
+                                "R U R2' U R2 U2' R' U' R' U2 R' U' R2 U2' R2' U2' R2"
+                            ]
+                        },
+                        {
+                            "name": "S4+",
+                            "scrambles": [
+                                "R U R' U R U' R' U2 R U2 R' U2' R U R' U R U2' R'"
+                            ],
+                            "solutions": [
+                                "R2 U2' R2' U' R2 U2' R2' U R2 U2 R2' U R2 U2 R2'"
+                            ]
+                        },
+                        {
+                            "name": "S4-",
+                            "scrambles": [
+                                "F' U' F U' F' U F U2' F' U2' F U2 F' U' F U' F' U2 F"
+                            ],
+                            "solutions": [
+                                "R2 U2 R2' U R2 U2 R2' U' R2 U2' R2' U' R2 U2' R2'"
+                            ]
+                        },
+                        {
+                            "name": "S5+",
+                            "scrambles": [
+                                "R U' R' U' F' U2 F U' F' U' F U' R U2' R'"
+                            ],
+                            "solutions": [
+                                "R U R U2 R2' U R U' R U2' R' U2' R' U2' R U2' R'"
+                            ]
+                        },
+                        {
+                            "name": "S5-",
+                            "scrambles": [
+                                "F' U F U R U2' R' U R U R' U F' U2 F"
+                            ],
+                            "solutions": [
+                                "R' U' R' U2' R2 U' R' U R' U2 R U2 R U2 R' U2 R"
+                            ]
+                        },
+                        {
+                            "name": "S6+",
+                            "scrambles": [
+                                "F' U' F R U R' U' F' U2 F R U2' R' U2 F' U2' F U R U R'"
+                            ],
+                            "solutions": [
+                                "R U R U R' U R U R' U2' R U' R2' U2' R U R'"
+                            ]
+                        },
+                        {
+                            "name": "S6-",
+                            "scrambles": [
+                                "F' U2' F R U2' R' U R U2 R' U2 R U2 R' F' U F U F' U2 F"
+                            ],
+                            "solutions": [
+                                "R' U' R' U' R U' R' U' R U2 R' U R2 U2 R' U' R"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "subsetName": "'Hard' PLLs",
+            "sets": [
+                {
+                    "setName": "G",
+                    "cases": [
+                        {
+                            "name": "G1+",
+                            "scrambles": [
+                                "F' U2' F U2 F' U2 F U R U2' R' U F' U2 F R U2 R'"
+                            ],
+                            "solutions": [
+                                "R' U2 R2 U2' R' U2 R' U R U2 R' U R2 U2 R2' U2' R"
+                            ]
+                        },
+                        {
+                            "name": "G1-",
+                            "scrambles": [
+                                "R U2 R' U2' R U2' R' U' F' U2 F U' R U2' R' F' U2' F"
+                            ],
+                            "solutions": [
+                                "R U2' R2' U2 R U2' R U' R' U2' R U' R2' U2' R2 U2 R'"
+                            ]
+                        },
+                        {
+                            "name": "G2+",
+                            "scrambles": [
+                                "F' U2' F U2' R U2' R' F' U2 F U2' F' U2' F R U2 R' U2' R U' R'"
+                            ],
+                            "solutions": [
+                                "R U2' R' U' R U2' R2' U2 L U' R U L' R' U2' R"
+                            ]
+                        },
+                        {
+                            "name": "G2-",
+                            "scrambles": [
+                                "F' U' F U2' F' U2 F R U2' R' U2' R U2 R' F' U2' F U2' R U2' R'"
+                            ],
+                            "solutions": [
+                                "F U2' R' U' R F' R' U' R F U' R' U2' R U2 F'"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "setName": "I",
+                    "cases": [
+                        {
+                            "name": "I1+",
+                            "scrambles": [
+                                "R U2 R' F' U F U2 R U R' U2' R U R' U R U2' R' F' U2' F R U2 R'"
+                            ],
+                            "solutions": [
+                                "F R2 U2 R2' U' R2 U' R2' F' R' U' R U' R' U2 R"
+                            ]
+                        },
+                        {
+                            "name": "I1-",
+                            "scrambles": [
+                                "R U' R' U2 R U' R' U R U2' R' U R U2' R' U2 R U R'"
+                            ],
+                            "solutions": [
+                                "BR' R2' U2' R2 U R2' U R2 BR R U R' U R U2' R'"
+                            ]
+                        },
+                        {
+                            "name": "I2+",
+                            "scrambles": [
+                                "R U R' U2 R U2 R' U2 R U R' U2 F' U' F U' F' U2 F R U' R'"
+                            ],
+                            "solutions": [
+                                "R' U2' R U R' U R F R2 U R2' U R2 U2' R2' F'"
+                            ]
+                        },
+                        {
+                            "name": "I2-",
+                            "scrambles": [
+                                "F' U' F U2' R U' R' U2' R U2' R' U2' R U R' U2' R U R' F' U2' F"
+                            ],
+                            "solutions": [
+                                "R U2 R' U' R U' R' BR' R2' U' R2 U' R2' U2 R2 BR"
+                            ]
+                        },
+                        {
+                            "name": "I3+",
+                            "scrambles": [
+                                "R U R' U2 R U2 R' F' U2' F U' F' U2 F U2' F' U2' F"
+                            ],
+                            "solutions": [
+                                "R' U2 R2 U2 R' U2' R' U2' R U2 R U R' U2' R U' R'"
+                            ]
+                        },
+                        {
+                            "name": "I3-",
+                            "scrambles": [
+                                "R U2' R' U2' R U2 R' U' R U2' R' F' U2 F U2 F' U F"
+                            ],
+                            "solutions": [
+                                "R U2' R2' U2' R U2 R U2 R' U2' R' U' R U2 R' U R"
+                            ]
+                        },
+                        {
+                            "name": "I4+",
+                            "scrambles": [
+                                "F' U2' F R U2 R' F' U2' F R U R' F' U F R U2 R' F' U2' F U2' R U2' R'"
+                            ],
+                            "solutions": [
+                                "R' U' R' U2' F' R U R U' R' F R' U2 R U R"
+                            ]
+                        },
+                        {
+                            "name": "I4-",
+                            "scrambles": [
+                                "R U R' U2 F' U2' F R U' R' F' U2 F R U2 R' U2 F' U' F R U2 R'"
+                            ],
+                            "solutions": [
+                                "R' U2 R U R' U R' U2' R U R' U R2 U' R' U2 R"
+                            ]
+                        },
+                        {
+                            "name": "I5+",
+                            "scrambles": [
+                                "F' U' F U R U2' R' U2' F' U' F U2 F' U' F R U2' R' F' U F"
+                            ],
+                            "solutions": [
+                                "R' U' R' U2' R F' R U R' U' R' F U2 R U R"
+                            ]
+                        },
+                        {
+                            "name": "I5-",
+                            "scrambles": [
+                                "R U R' F' U2' F U R U2' R' F' U2' F R U R' F' U2 F U2' R U' R'"
+                            ],
+                            "solutions": [
+                                "R' U2' R U R2' U' R U' R' U2 R U' R U' R' U2' R"
+                            ]
+                        },
+                        {
+                            "name": "I6+",
+                            "scrambles": [
+                                "R U2 R' F' U2' F R U R' U' F' U2' F R U2 R' F' U' F R U2 R'"
+                            ],
+                            "solutions": [
+                                "F R U2 R' U' R U' R' F' U R' U' R U2' R' U R U R' U R"
+                            ]
+                        },
+                        {
+                            "name": "I6-",
+                            "scrambles": [
+                                "F' U2 F R U' R' F' U2 F R U2' R' U' F' U F R U2' R' F' U2 F"
+                            ],
+                            "solutions": [
+                                "BR' R' U2' R U R' U R BR U' R U R' U2 R U' R' U' R U' R'"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "setName": "L",
+                    "cases": [
+                        {
+                            "name": "L1",
+                            "scrambles": [
+                                "R U R' F' U2 F R U2 R' U2' F' U F R U' R' F' U2 F U2 F' U F"
+                            ],
+                            "solutions": [
+                                "R' U2 R U R' U R U' R' U2 R U' R U R' U R U2' R'"
+                            ]
+                        },
+                        {
+                            "name": "L2",
+                            "scrambles": [
+                                "F' U2 F R U2' R' F' U2' F U' R U' R' U R U' R' U' R U' R' F' U2 F"
+                            ],
+                            "solutions": [
+                                "R' U2' R U' R' U R U R' U R2 U R' U R U R' U' R U2' R'"
+                            ]
+                        },
+                        {
+                            "name": "L3+",
+                            "scrambles": [
+                                "R U R' U R U2' R' U F' U2 F U' R U2' R' F' U2' F U2' R U2' R'"
+                            ],
+                            "solutions": [
+                                "F U2' F' U2' R F R' U' R F' U2' R' U' R U2' R'"
+                            ]
+                        },
+                        {
+                            "name": "L3-",
+                            "scrambles": [
+                                "F' U2' F R U2' R' U R U2 R' F' U2 F R U2 R' F' U2' F R U R' F' U F R U2' R'"
+                            ],
+                            "solutions": [
+                                "R U R' U' R' U2 R U R U R2' U R U' R U R' U' R U2' R'"
+                            ]
+                        },
+                        {
+                            "name": "L4+",
+                            "scrambles": [
+                                "R U2 R' F' U F U F' U2' F R U2' R' F' U2 F U2 F' U F"
+                            ],
+                            "solutions": [
+                                "R' U2 R U' R' U2' R' U2' R U' R U R' U R' U R U R"
+                            ]
+                        },
+                        {
+                            "name": "L4-",
+                            "scrambles": [
+                                "F' U' F U2' F' U2' F R U2 R' F' U2 F U' F' U' F R U2' R'"
+                            ],
+                            "solutions": [
+                                "R' U' R' U' R U' R U' R' U R' U2 R U2 R U R' U2' R"
+                            ]
+                        },
+                        {
+                            "name": "L5+",
+                            "scrambles": [
+                                "F' U2 F U R U R' F' U F U' F' U F R U R' U' R U' R'"
+                            ],
+                            "solutions": [
+                                "R' U2' R U R' U R2 U2' R' U' R U R' U2' R U' R'"
+                            ]
+                        },
+                        {
+                            "name": "L5-",
+                            "scrambles": [
+                                "R U2 R' F' U' F R U' R' U' R U' R' U F' U2' F R U R' F' U2' F R U' R'"
+                            ],
+                            "solutions": [
+                                "R U2 R' U' R U' R2' U2 R U R' U' R U2 R' U R"
+                            ]
+                        },
+                        {
+                            "name": "L6+",
+                            "scrambles": [
+                                "R U2 R' U' R U' R' U F' U2 F U F' U' F U2 F' U F"
+                            ],
+                            "solutions": [
+                                "R' U' R U2' R' U R U' R' U2' R2 U R' U R U2' R'"
+                            ]
+                        },
+                        {
+                            "name": "L6-",
+                            "scrambles": [
+                                "R U' R' U R U2 R' U2 R U R' U R U R' F' U2 F U' F' U' F"
+                            ],
+                            "solutions": [
+                                "R U R' U2 R U' R' U R U2 R2' U' R U' R' U2 R"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "setName": "X",
+                    "cases": [
+                        {
+                            "name": "X1",
+                            "scrambles": [
+                                "R U2 R' U R U2 R' F' U2' F U' F' U2 F U2' F' U2' F R U R' U R U2' R'"
+                            ],
+                            "solutions": [
+                                "F U2 R U2' R' U R U R' U2' F' R' U' R U2' R' U2' R"
+                            ]
+                        },
+                        {
+                            "name": "X2",
+                            "scrambles": [
+                                "R U R' F' U' F U R U2' R' U' F' U2' F R U R' U2' F' U2' F R U R'"
+                            ],
+                            "solutions": [
+                                "F R U R' F U R' U' F' U R2 U2' R' F'"
+                            ]
+                        },
+                        {
+                            "name": "X3",
+                            "scrambles": [
+                                "R U R' U R U2' R' F' U2' F U R U2' R' F' U2' F U2 R U' R' F' U F"
+                            ],
+                            "solutions": [
+                                "R' U' R U' R' U2 R2 U R' U2 R' U2' R2 U' R' U2 R' U R"
+                            ]
+                        },
+                        {
+                            "name": "X4",
+                            "scrambles": [
+                                "F' U' F R U2' R' F' U2 F R U2' R' U' R U R' F' U2' F R U2 R' F' U2' F"
+                            ],
+                            "solutions": [
+                                "R' U' R2 U' R' U R U' R2' U' R2 U R' U' R U R2' U2 R"
+                            ]
+                        },
+                        {
+                            "name": "X5+",
+                            "scrambles": [
+                                "F' U2' F R U R' F' U F R U R' U2 R U R' F' U F U2' F' U2' F R U R'"
+                            ],
+                            "solutions": [
+                                "R U' R' U2' R U2' R' U' R2 U R' U R U R' U2' R U' R2'"
+                            ]
+                        },
+                        {
+                            "name": "X5-",
+                            "scrambles": [
+                                "R U2 R' U' F' U F U2 R U' R' F' U2 F U2' R U' R' F' U' F R U' R'"
+                            ],
+                            "solutions": [
+                                "R2 U R' U2 R U' R' U' R U' R2' U R U2 R' U2 R U R'"
+                            ]
+                        },
+                        {
+                            "name": "X6+",
+                            "scrambles": [
+                                "R U R' U2 R U2 R' U' R U2' R' U' R U R' U2' R U' R'"
+                            ],
+                            "solutions": [
+                                "F R U R' U' R U' R2' U' F' U' F U2 R U' R U R' F'"
+                            ]
+                        },
+                        {
+                            "name": "X6-",
+                            "scrambles": [
+                                "R U2 R' U2 F' U' F U2 F' U F U R U R' F' U2' F U F' U' F"
+                            ],
+                            "solutions": [
+                                "R U2' R U R2' U R U R' U' R U' R U' R2' U R U2 R'"
+                            ]
+                        },
+                        {
+                            "name": "X7+",
+                            "scrambles": [
+                                "R U2 R' F' U' F R U2' R' U2 R U2 R' U2 R U2 R' U R U R' U2' F' U2' F"
+                            ],
+                            "solutions": [
+                                "R U R' U' F' U' F U R U R' U R U2' F R' F' R U R U' R2'"
+                            ]
+                        },
+                        {
+                            "name": "X7-",
+                            "scrambles": [
+                                "R U2' R' U' F' U' F R U2' R' U2' R U2' R' U R U2' R' F' U2' F U' F' U' F"
+                            ],
+                            "solutions": [
+                                "R U R2' F' R U2' R U' R' U2' R' F R U R U R' U2' R U' R'"
                             ]
                         }
                     ]
