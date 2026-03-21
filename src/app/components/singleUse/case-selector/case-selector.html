@@ -3,7 +3,8 @@
     <button (click)="onTrainClick()" [class.end-train-button]="isTraining()">{{trainBottonText()}}</button>
 
     @if (isTraining()) {
-    <app-trainer [cases]="trainingCases()" (removeCase)=removeCase($event) (trainingEnded)="endTraining()" />
+    <app-trainer [cases]="trainingCases()" (removeCase)="removeCase($event)" (trainingEnded)="endTraining()"
+        (reinstateCase)="reinstateCase($event)" />
     }
     @else{
     <span class="container">
@@ -14,9 +15,9 @@
     </span>
 
     @if(isOLLSelected()){
-    <app-type-selector [OLLsPLLs]="OLLs()" #OLLsComponent/>
+    <app-type-selector [OLLsPLLs]="OLLs()" #OLLsComponent />
     }@else{
-    <app-type-selector [OLLsPLLs]="PLLs()" #PLLsComponent/>
+    <app-type-selector [OLLsPLLs]="PLLs()" #PLLsComponent />
     }
     }
 

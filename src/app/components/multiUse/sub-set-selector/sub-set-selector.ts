@@ -13,7 +13,7 @@ export class SubSetSelector {
 
   public subsetLL = input.required<SubsetLL>();
 
-  protected showCases = signal<boolean>(false);
+  protected showCases = signal<boolean>(true);
 
   protected toggleShowSets(): void {
     this.showCases.update((value) => { return !value });

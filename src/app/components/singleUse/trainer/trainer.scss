@@ -16,12 +16,12 @@
     flex: 5;
 }
 
-#current-and-last-case {
-    flex: 4;
+#scramble {
+    font-size: calc(var(--my-text-size) * 1.5);
 }
 
-.scramble {
-    font-size: x-large;
+#current-and-last-case {
+    flex: 4;
 }
 
 .timer {
@@ -44,7 +44,6 @@
 
 .recon-exec {
     padding: 10px;
-    font-size: x-large;
     display: block;
 }
 
@@ -53,7 +52,11 @@
 }
 
 .case-name {
-    font-size: x-large;
+    font-size: var(--my-subtitle-size);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    ;
 }
 
 #current-case-img {
@@ -64,11 +67,10 @@
     width: 150px;
 }
 
-.case-solution {
-    font-size: larger;
+#reselect-button {
+    margin-top: 0;
+    margin-bottom: 0;
 }
-
-#container-last-case {}
 
 #container-other-info {
     display: block;

@@ -1,4 +1,4 @@
-import { Component, signal, input, OnInit, ViewChild, ElementRef, EventEmitter, Output, output } from '@angular/core';
+import { Component, signal, input, OnInit, ViewChild, ElementRef, EventEmitter, Output, output, computed, Signal } from '@angular/core';
 import { CaseLL } from '../../../../../public/utilites/CaseLL.type';
 import { DecimalPipe } from '@angular/common';
 import { DataReader } from '../../../service/data-reader';
@@ -14,6 +14,7 @@ export class Trainer implements OnInit {
 
   trainingEnded = output<void>();
   removeCase = output<CaseLL>();
+  reinstateCase = output<CaseLL>();
 
   @ViewChild('focusHere') timerEl!: ElementRef;
 
@@ -25,9 +26,13 @@ export class Trainer implements OnInit {
   }
 
   private nullCase: CaseLL = { name: "", solutions: [""], scrambles: [""], isSelected: true };
+  private preAUF: Array<string> = ["", "U ", "U' ", "U2 ", "U2' "];
+  private postAUF: Array<string> = ["", " U", " U'", " U2", " U2'"];
 
   protected currentCase = signal<CaseLL>(this.nullCase);
   protected lastCase = signal<CaseLL>(this.nullCase);
+  protected isLastCaseRemoved = signal<boolean>(false);
+
   protected isTimerStarting = signal<boolean>(false);
   protected currentTime = signal<number>(0);
   protected currentTimeSplit = signal<number>(0);
@@ -46,7 +51,19 @@ export class Trainer implements OnInit {
   protected isRemovingFastCases = signal<boolean>(false);
   protected fastCaseTime = signal<number>(1);
   protected isTimerSplitOn = signal<boolean>(false);
+  protected showSolution = signal<boolean>(true);
 
+
+  protected currentScramble: Signal<string> = computed(() => {
+    return this.preAUF[Math.floor(Math.random() * this.preAUF.length)]
+      + this.currentCase().scrambles[0] +
+      this.postAUF[Math.floor(Math.random() * this.postAUF.length)];
+  });
+
+
+  getImgPath(ccase: CaseLL | undefined): string {
+    return DataReader.getImgPath(ccase);
+  }
 
   onSelectShowRemainingCases(e: Event): void {
     this.showRemainingCases.set((e.target as HTMLSelectElement).value);
@@ -57,28 +74,40 @@ export class Trainer implements OnInit {
   */
   protected nextCase(doSetLastCase: boolean = true): void {
     if (doSetLastCase)
-      if (this.currentCase().name.length > 0)
+      if (this.currentCase().name.length > 0) {
         this.lastCase.set(this.currentCase());
+        this.isLastCaseRemoved.set(false);
+      }
     this.currentCase.set(this.cases()[Math.floor(Math.random() * this.cases().length)]);
     this.setFocus();
   }
 
   protected removeLastCase(): void {
-    this.removeCase.emit(this.lastCase());
-    this.lastCase.set(this.nullCase);
     this.setFocus();
 
-    if (this.cases().length == 0) {
-      alert("No more cases!");
-      this.trainingEnded.emit();
+    if (!this.isLastCaseRemoved()) {
+      this.removeCase.emit(this.lastCase());
+
+      this.isLastCaseRemoved.set(true);
+
+      if (this.cases().length == 0) {
+        alert("No more cases!");
+        this.trainingEnded.emit();
+      }
+
+      this.nextCase(false);
+    }
+    else {
+      alert("Already removed");
     }
 
-    this.nextCase(false);
   }
 
-  getImgPath(ccase: CaseLL | undefined): string {
-    return DataReader.getImgPath(ccase);
+  protected reSelectLastCase(): void {
+    this.reinstateCase.emit(this.lastCase());
+    this.isLastCaseRemoved.set(false);
   }
+
 
   // to set the focus on the timer
   protected setFocus(): void {

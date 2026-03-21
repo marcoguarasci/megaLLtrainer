@@ -1,5 +1,4 @@
 import { Component, computed, OnInit, Signal, signal } from '@angular/core';
-import { SubSetSelector } from "../../multiUse/sub-set-selector/sub-set-selector";
 import { DataReader } from '../../../service/data-reader';
 import { CaseLL } from '../../../../../public/utilites/CaseLL.type';
 import { SubsetLL } from '../../../../../public/utilites/SubsetLL';
@@ -8,7 +7,7 @@ import { TypeSelector } from "../../multiUse/type-selector/type-selector";
 
 @Component({
   selector: 'app-case-selector',
-  imports: [SubSetSelector, Trainer, TypeSelector],
+  imports: [Trainer, TypeSelector],
   templateUrl: './case-selector.html',
   styleUrl: './case-selector.scss',
 })
@@ -90,6 +89,58 @@ export class CaseSelector implements OnInit {
     }
   }
 
+  protected reinstateCase(selectedCase: CaseLL): void {
+
+    this.trainingCases.update((value) => {
+      value.push(selectedCase); return value;
+    });
+    selectedCase.isSelected = true;
+
+    // Check selection of sets and subsets    
+    for (let subsetLL of this.isOLLSelected() ? this.OLLs() : this.PLLs()) {
+
+      let isSubsetSelected: boolean = true;
+
+      // if a subset isn't selected
+      if (!subsetLL.isSubsetSelected) {
+        for (let setLL of subsetLL.sets) {
+
+          // if a set of an unselected subset isn't selected
+          if (!setLL.isSetSelected) {
+
+            // if an unselcted set of an unselected subset contains the reinstated case
+            if (setLL.cases.includes(selectedCase)) {
+              for (let ccase of setLL.cases)
+                if (!ccase.isSelected) {
+                  isSubsetSelected = false;
+                  break;
+                }
+
+              // if all cases in this set are selected
+              if (isSubsetSelected)
+                setLL.isSetSelected = true;
+
+            }
+            // if an unselcted set of an unselected subset does not contain the reinstated case
+            else {
+              isSubsetSelected = false;
+              break;
+            }
+          }
+
+          // if all sets in this subset are selected
+          if (isSubsetSelected)
+            subsetLL.isSubsetSelected = true;
+          else
+            break;
+        }
+      }
+
+      if (!isSubsetSelected)
+        break;
+    }
+  }
+
   OLLClicked(): void {
     this.isOLLSelected.set(true);
   };
@@ -119,4 +170,5 @@ export class CaseSelector implements OnInit {
   endTraining(): void {
     this.isTraining.set(false);
   }
+
 }

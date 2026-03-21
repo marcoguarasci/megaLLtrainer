@@ -24,7 +24,7 @@
 }
 
 .subset-name {
-    font-size: xx-large;
+    font-size: calc(var(--my-subtitle-size) * 1.2);
     cursor: pointer;
 }
 
