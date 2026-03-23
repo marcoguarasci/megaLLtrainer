@@ -3,10 +3,11 @@ import { CaseLL } from '../../../../../public/utilites/CaseLL.type';
 import { DecimalPipe } from '@angular/common';
 import { DataReader } from '../../../service/data-reader';
 import { FormsModule } from '@angular/forms';
+import { UnselectableCaseShower } from "../../multiUse/unselectable-case-shower/unselectable-case-shower";
 
 @Component({
   selector: 'app-trainer',
-  imports: [DecimalPipe, FormsModule],
+  imports: [DecimalPipe, FormsModule, UnselectableCaseShower],
   templateUrl: './trainer.html',
   styleUrl: './trainer.scss',
 })
@@ -42,6 +43,22 @@ export class Trainer implements OnInit {
   protected bothImgsNames: string = "bothImgsNames";
   protected noneImgsNames: string = "noneImgsNames";
   protected showRemainingCases = signal<string>(this.onlyNames);
+  protected remainingCasesNamesList: Signal<string> = computed(() => {
+
+    let casesList: string = "";
+    let isFirstCase: boolean = true;
+
+    for (let ccase of this.cases()) {
+      if (isFirstCase)
+        isFirstCase = false;
+      else
+        casesList += ", "
+
+      casesList += ccase.name;
+
+    }
+    return casesList;
+  });
 
   readonly timerIncrease: number = 10;
   private isTimerGoing: boolean = false;
@@ -119,6 +136,9 @@ export class Trainer implements OnInit {
   // Timer 1
   timerPressed(event: KeyboardEvent): void {
 
+    if (event.code == "Space")
+      event.preventDefault();
+
     if (this.isTimerGoing) { // stop timer
 
       if (this.isTimerSplitOn() && !this.isTimeSplitDone) {
@@ -146,6 +166,7 @@ export class Trainer implements OnInit {
         this.currentTimeSplit.set(0);
       }
     }
+
   }
 
   // Timer 2

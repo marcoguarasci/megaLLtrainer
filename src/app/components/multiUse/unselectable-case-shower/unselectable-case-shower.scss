@@ -1,30 +1,27 @@
-.superbox {
-    display: flex;
+$img-width-height: 60px;
 
-    width: 200px;
-    height: 200px;
+.container {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .box {
+    display: block;
+    justify-content: center;
+    border: 1px solid black;
 
-    display: flex;
-    border-radius: 10%;
-    border: 4px solid black;
-
-    padding: 6px;
-    margin: 3px;
+    margin: 1px;
+    padding: 1px;
 }
 
 img {
-    max-width: 100%;
-    box-sizing: border-box;
+    width: $img-width-height;
+    height: $img-width-height;
     border-radius: inherit;
 }
 
-.selected {
-    background-color: yellow;
-    border-radius: 5%;
-    border-width: 6px;
-    padding: 5px;
-    margin: 1px;
+.name {
+    text-align: center;
+    // display: block;
+    margin-top: -6px;
 }

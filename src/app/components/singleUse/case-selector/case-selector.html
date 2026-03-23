@@ -1,4 +1,9 @@
 <span class="generic">
+    @if(!isTraining()){
+    <h1>
+        Megaminx last layer trainer
+    </h1>
+    }
 
     <button (click)="onTrainClick()" [class.end-train-button]="isTraining()">{{trainBottonText()}}</button>
 
@@ -7,18 +12,18 @@
         (reinstateCase)="reinstateCase($event)" />
     }
     @else{
-    <span class="container">
+    <span id="container-OPLLs-tabs">
 
-        <span class="tab" [class.selected]="isOLLSelected()" (click)="OLLClicked()">OLL</span>
-        <span class="tab" [class.selected]="!isOLLSelected()" (click)="PLLClicked()">PLL</span>
+        <span class="tab" [class.selected-tab]="isOLLSelected()" (click)="OLLClicked()">OLL</span>
+        <span class="tab" [class.selected-tab]="!isOLLSelected()" (click)="PLLClicked()">PLL</span>
 
     </span>
 
     @if(isOLLSelected()){
-    <app-type-selector [OLLsPLLs]="OLLs()" #OLLsComponent />
-    }@else{
-    <app-type-selector [OLLsPLLs]="PLLs()" #PLLsComponent />
-    }
+            <app-type-selector [OLLsPLLs]="OLLs()" #OLLsComponent />
+        }@else{
+            <app-type-selector [OLLsPLLs]="PLLs()" #PLLsComponent />
+        }
     }
 
 </span>

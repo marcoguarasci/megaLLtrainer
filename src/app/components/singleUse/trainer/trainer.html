@@ -1,6 +1,6 @@
 <p id="container-working-space">
     <span id="timer-and-scramble" class="big-container">
-        <button (click)="nextCase()">next case</button>
+        <button (click)="nextCase()">Next case</button>
         @if(lastCase().name.length>0){
         <button (click)="removeLastCase()">Remove last case</button>
         }
@@ -87,16 +87,24 @@
 
 <span id="container-other-info" class="big-container">
     <p>
-        {{cases().length}} remaining cases
+        {{cases().length}}
+        @if(cases().length > 1){
+        <span>
+            cases
+        </span>
+        }
+        @else{
+        <span>
+            case
+        </span>
+        }
+        left
     </p>
+
     @switch(showRemainingCases()){
 
     @case(onlyNames){
-    @for (ccase of cases(); track ccase.name) {
-    <span>
-        {{ccase.name}},
-    </span>
-    }
+    <p>{{remainingCasesNamesList()}}</p>
     }
     @case(onlyImgs){
     @for(ccase of cases(); track ccase.name){
@@ -106,12 +114,7 @@
     }
     }
     @case(bothImgsNames){
-    @for(ccase of cases(); track ccase.name){
-    <span>
-        {{ccase.name}}
-        <img [src]="getImgPath(ccase)" alt="no img available" class="remaining-case-img" />
-    </span>
-    }
+        <app-unselectable-case-shower [cases]="cases()"/>
     }
     }
 

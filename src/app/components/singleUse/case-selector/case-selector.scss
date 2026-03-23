@@ -1,19 +1,22 @@
-.container {
-    width: inherit;
-    display: flex;
-    justify-content: space-around;
-    height: 50px;
-
-
-    padding: 0px 10px;
-}
-
 .end-train-button {
     border-color: red;
 }
 
 .end-train-button:hover {
     background-color: rgba($color: #FF0000, $alpha: 0.3);
+}
+
+#container-OPLLs-tabs {
+    width: inherit;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    background-color: purple;
+    height: calc(var(--my-subtitle-size) * 2);
+
+
+    padding: 0px 10px;
 }
 
 .tab {
@@ -29,10 +32,15 @@
     transition: all .06s;
 }
 
-.selected {
+.selected-tab {
     border: 5px solid black;
     margin: 1px;
     width: 60vw;
 
     font-weight: bold;
+}
+
+#container-selection{
+    padding: 100px;
+    background-color: aqua;
 }

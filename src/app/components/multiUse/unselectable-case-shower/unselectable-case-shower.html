@@ -1,5 +1,8 @@
-<span class="superbox">
-    <span [class.selected]="isSelected()" class="box">
-        <img src="/imgs/prova.png" alt="case img" />
+<span class="container">
+    @for(ccase of cases(); track ccase.name){
+    <span class="box">
+        <img [src]="getImgPath(ccase)" alt="case img" />
+        <p class="name"> {{ccase.name}} </p>
     </span>
+    }
 </span>

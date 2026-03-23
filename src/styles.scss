@@ -1,6 +1,6 @@
 :root {
     --my-title-size: 4.3rem;
-    --my-subtitle-size: calc(var(--my-title-size) / 1.6);
+    --my-subtitle-size: calc(var(--my-title-size) / 1.8);
     --my-text-size: calc(var(--my-subtitle-size) / 2);
 }
 
@@ -8,15 +8,15 @@
     margin: 0;
     padding: 0;
     outline: none;
-    border-radius: 2%;
+    border-radius: 1cqmin;
 }
 
 h1 {
     font-size: var(--my-title-size);
-    // font-size: 6rem;
+    text-align: center;
 }
 
-p,span,input {
+p,span,input,select {
     font-size: var(--my-text-size);
 }
 
@@ -24,12 +24,11 @@ p,span,input {
 button {
     padding: 3px 6px;
     margin: 2px;
-    font-size: small;
+    font-size: var(--my-text-size);
 
 
     background-color: transparent;
     border: solid darkblue 2px;
-    border-radius: 7px;
     cursor: pointer;
 }
 
