@@ -19,23 +19,5 @@ export class TypeSelector {
   protected toggleShowSets(): void {
     this.showCases.update((value) => { return !value });
   }
-
-  // protected toggleSubset(toggledSubset: SubsetLL): void {
-  //   toggledSubset.isSubsetSelected = !toggledSubset.isSubsetSelected;
-
-  //   for (let setLL of toggledSubset.sets) {
-  //     setLL.isSetSelected = toggledSubset.isSubsetSelected;
-  //     for (let ccase of setLL.cases)
-  //       ccase.isSelected = toggledSubset.isSubsetSelected;
-  //   }
-  // }
-
-  // protected toggledSet(toggledSet: SetLL, subsetLL: SubsetLL) {
-
-  //   if (toggledSet.isSetSelected) {
-  //     if (!subsetLL.isSubsetSelected && !subsetLL.sets.some((setLL) => { return !setLL.isSetSelected }))
-  //       subsetLL.isSubsetSelected = true;
-  //   } else if (subsetLL.isSubsetSelected)
-  //     subsetLL.isSubsetSelected = false;
-  // }
+  
 }

@@ -50,6 +50,15 @@ export class CaseSelector implements OnInit {
     return "Train";
   });;
 
+  isAllSelected: boolean = false;
+  selectAllButtonsText: Signal<string> = computed(() => {
+    if (this.isAllSelected)
+      return "Deselect all";
+    return "Select all";
+  });;
+
+  showInfo = signal<boolean>(false);
+
   protected removeCase(removedCase: CaseLL): void {
 
     for (let i = 0; i < this.trainingCases().length; i++) {
@@ -165,6 +174,36 @@ export class CaseSelector implements OnInit {
       this.isTraining.set(!this.isTraining());
     else
       alert("No cases selected!");
+  }
+
+  onSelectAllClick(): void {
+
+    let OLLPLLs: Array<SubsetLL> = this.isOLLSelected() ? this.OLLs() : this.PLLs();
+
+    for (let subset of OLLPLLs) {
+      for (let set of subset.sets) {
+        for (let ccase of set.cases) {
+          this.reinstateCase(ccase);
+        }
+      }
+    }
+  }
+
+  onInfoMouseEnter(): void {
+    this.showInfo.set(true);
+  }
+
+  onInfoMouseLeave(): void {
+    this.showInfo.set(false);
+  }
+
+  onInfoClick(): void {
+    this.showInfo.update((value) => { return !value });
+  }
+
+  onLinkClick(e: Event):void{
+    e.stopImmediatePropagation();
+
   }
 
   endTraining(): void {

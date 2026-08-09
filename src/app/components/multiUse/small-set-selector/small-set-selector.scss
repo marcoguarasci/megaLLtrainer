@@ -2,26 +2,37 @@
     display: block;
     width: fit-content;
     justify-content: center;
-    // align-items: center;
+    align-items: center;
 
     border: 2px solid black;
     border-radius: 5px;
+
+    margin: 4px;
+    padding: 2px;
     
 }
 
 .set-name{
-    width: 100%;
     display: block;
     text-align: center;
     font-size: var(--my-subtitle-size);
 
+    margin-left: 10px;
+    margin-right: 10px;
     cursor: pointer;
 }
 
 .cases-container{
+    justify-content: center;
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
     padding: 5px;
 
+    // max-width: 400px;
+
+}
+
+.case-container{
+    // height: auto;
 }

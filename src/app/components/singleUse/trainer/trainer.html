@@ -10,8 +10,8 @@
         </p>
 
         <p id="timer-container">
-            <span class="timer" id="focus-here" #focusHere (keydown)="timerPressed($event)"
-                (keyup)="timerReleased($event)" [class.timer-starting]="isTimerStarting()" tabindex="1">
+            <span class="timer" id="focus-here" #focusHere (keydown)="timerPressed($event)" (touchstart)="timerPressedMobile($event)"
+                (keyup)="timerReleased($event)" (touchend)="timerReleasedMobile($event)" [class.timer-starting]="isTimerStarting()" tabindex="1">
                 {{currentTime() | number: '1.2-2'}}
             </span>
 
@@ -44,7 +44,7 @@
     </span>
 
     <span id="current-and-last-case" class="big-container">
-        <span id="container-current-case" class="big-container">
+        <span id="container-current-case">
             <p class="case-name">
                 Current case: {{currentCase().name}}
             </p>
@@ -58,9 +58,11 @@
             }
 
         </span>
+        
+        <span class="horizontal-line"></span>
 
         @if (lastCase().name.length > 0) {
-        <span id="container-last-case" class="big-container">
+        <span id="container-last-case">
             <p class="case-name">
                 Last case: {{lastCase().name}}
                 @if(isLastCaseRemoved()){

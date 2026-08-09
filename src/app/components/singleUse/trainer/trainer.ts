@@ -123,6 +123,7 @@ export class Trainer implements OnInit {
   protected reSelectLastCase(): void {
     this.reinstateCase.emit(this.lastCase());
     this.isLastCaseRemoved.set(false);
+    this.setFocus();
   }
 
 
@@ -133,8 +134,18 @@ export class Trainer implements OnInit {
     }, 10);
   }
 
+  protected timerPressedMobile(event: TouchEvent): void {
+    event.preventDefault();
+    this.timerPressed(new KeyboardEvent('keydown', { code: "Space" }))
+  }
+
+  protected timerReleasedMobile(event: TouchEvent): void {
+    event.preventDefault();
+    this.timerReleased(new KeyboardEvent('keyup', { code: "Space" }))
+  }
+
   // Timer 1
-  timerPressed(event: KeyboardEvent): void {
+  protected timerPressed(event: KeyboardEvent): void {
 
     if (event.code == "Space")
       event.preventDefault();
@@ -170,7 +181,7 @@ export class Trainer implements OnInit {
   }
 
   // Timer 2
-  timerReleased(event: KeyboardEvent): void {
+  protected timerReleased(event: KeyboardEvent): void {
 
     if (event.code == "Space" && this.isTimerStarting()) {
       this.isTimerStarting.set(false);

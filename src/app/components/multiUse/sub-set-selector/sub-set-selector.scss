@@ -1,11 +1,13 @@
 .subset-container {
-
     border: solid;
     border-width: 5px;
-    border-color: red;
+    border-color: crimson;
 
     display: flex;
     flex-wrap: wrap;
+
+    margin: 8px;
+    padding: 4px;
 }
 
 .subset-selected {
@@ -35,11 +37,6 @@
 }
 
 .sets-container {
-
-    // border: solid;
-    // border-width: 5px;
-    // border-color: red;
-
     display: flex;
     flex-wrap: wrap;
 }

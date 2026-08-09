@@ -6,6 +6,7 @@
     padding: 5px;
     border: solid black 2px;
     display: block;
+    margin: 5px;
 }
 
 #timer-container {
@@ -22,6 +23,16 @@
 
 #current-and-last-case {
     flex: 4;
+}
+
+@media (max-width: 500px) {
+    .big-container{
+        min-width: 70%;
+    }
+
+    #container-working-space {
+        flex-wrap: wrap;
+    }
 }
 
 .timer {
