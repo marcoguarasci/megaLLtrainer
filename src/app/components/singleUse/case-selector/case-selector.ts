@@ -1,9 +1,10 @@
-import { Component, computed, OnInit, Signal, signal } from '@angular/core';
+import { Component, computed, inject, OnInit, Signal, signal } from '@angular/core';
 import { DataReader } from '../../../service/data-reader';
 import { CaseLL } from '../../../../../public/utilites/CaseLL.type';
 import { SubsetLL } from '../../../../../public/utilites/SubsetLL';
 import { Trainer } from "../trainer/trainer";
 import { TypeSelector } from "../../multiUse/type-selector/type-selector";
+
 
 @Component({
   selector: 'app-case-selector',
@@ -190,18 +191,30 @@ export class CaseSelector implements OnInit {
   }
 
   onInfoMouseEnter(): void {
-    this.showInfo.set(true);
+    this.openInfo();
   }
 
   onInfoMouseLeave(): void {
-    this.showInfo.set(false);
+    this.closeInfo();
   }
 
   onInfoClick(): void {
-    this.showInfo.update((value) => { return !value });
+    this.openInfo();
   }
 
-  onLinkClick(e: Event):void{
+  onCloseInfoClick(): void {
+    this.closeInfo();
+  }
+
+  closeInfo(): void {
+    this.showInfo.set(false);
+  }
+
+  openInfo(): void {
+    this.showInfo.set(true);
+  }
+
+  onLinkClick(e: Event): void {
     e.stopImmediatePropagation();
 
   }
