@@ -95,7 +95,9 @@ export class Trainer implements OnInit {
         this.lastCase.set(this.currentCase());
         this.isLastCaseRemoved.set(false);
       }
-    this.currentCase.set(this.cases()[Math.floor(Math.random() * this.cases().length)]);
+
+      this.currentCase.set(this.cases()[Math.floor(Math.random() * this.cases().length)]);
+
     this.setFocus();
   }
 
@@ -164,6 +166,7 @@ export class Trainer implements OnInit {
         if (this.isRemovingFastCases())
           if (this.currentTime() < this.fastCaseTime())
             this.removeLastCase();
+        
 
         clearInterval(this.interval);
       }

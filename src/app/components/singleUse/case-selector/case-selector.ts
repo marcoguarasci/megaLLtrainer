@@ -51,9 +51,9 @@ export class CaseSelector implements OnInit {
     return "Train";
   });;
 
-  isAllSelected: boolean = false;
+  isAllSelected = signal<boolean>(false);
   selectAllButtonsText: Signal<string> = computed(() => {
-    if (this.isAllSelected)
+    if (this.isAllSelected())
       return "Deselect all";
     return "Select all";
   });;
@@ -62,11 +62,14 @@ export class CaseSelector implements OnInit {
 
   protected removeCase(removedCase: CaseLL): void {
 
+    this.isAllSelected.set(!this.isAllSelected());
+
     for (let i = 0; i < this.trainingCases().length; i++) {
       if (this.trainingCases()[i].name == removedCase.name) {
         this.trainingCases.update((value) => {
-          value.splice(i, 1);
-          return value;
+          const copy = [...value]; // to update the array itself
+          copy.splice(i, 1);
+          return copy;
         });
 
         removedCase.isSelected = false;
@@ -180,14 +183,19 @@ export class CaseSelector implements OnInit {
   onSelectAllClick(): void {
 
     let OLLPLLs: Array<SubsetLL> = this.isOLLSelected() ? this.OLLs() : this.PLLs();
+    this.isAllSelected.set(!this.isAllSelected());
 
     for (let subset of OLLPLLs) {
+      subset.isSubsetSelected = this.isAllSelected();
       for (let set of subset.sets) {
+        set.isSetSelected = this.isAllSelected();
         for (let ccase of set.cases) {
-          this.reinstateCase(ccase);
+          ccase.isSelected = this.isAllSelected();
+          // this.reinstateCase(ccase);
         }
       }
     }
+
   }
 
   onInfoMouseEnter(): void {
